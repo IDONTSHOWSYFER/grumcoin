@@ -14,7 +14,6 @@ body {
 }
 
 /* Styles pour l'en-tête du site */
-/* Styles pour l'en-tête du site */
 header {
     background-color: #111111; /* Fond noir très sombre pour une ambiance infernale */
     padding: 20px 0; /* Espacement vertical augmenté pour plus de présence */
@@ -498,12 +497,15 @@ main {
     .about-title {
         margin-top: 75px;
     }
+    
     .blockquote-wrapper {
         margin-top: -60px;
     }
+
     .visual-separator {
         margin-top: -55px;
     }
+
     #roadmap .roadmap-title {
         margin-top: 50px;
     }
