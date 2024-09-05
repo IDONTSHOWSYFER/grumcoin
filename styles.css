@@ -1,0 +1,504 @@
+/* Réinitialisation des marges et des bordures pour tous les éléments */
+* {
+    margin: 0; /* Supprime la marge par défaut */
+    padding: 0; /* Supprime le padding par défaut */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale de l'élément */
+}
+
+/* Styles pour le corps du document */
+body {
+    font-family: 'Arial', sans-serif; /* Définit la police générale du texte */
+    color: #ffffff; /* Couleur du texte en blanc */
+    background-color: #000000; /* Couleur de fond noire */
+    line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+}
+
+/* Styles pour l'en-tête du site */
+/* Styles pour l'en-tête du site */
+header {
+    background-color: #111111; /* Fond noir très sombre pour une ambiance infernale */
+    padding: 20px 0; /* Espacement vertical augmenté pour plus de présence */
+    border-bottom: 2px solid #c8102e; /* Bordure inférieure rouge sang pour accentuer la séparation */
+    position: relative;
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+    display: flex; /* Utilise le modèle Flexbox pour la disposition */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    align-items: center; /* Centre verticalement les éléments */
+    max-width: 1200px; /* Largeur maximale pour la barre de navigation */
+    margin: 0 auto; /* Centre la barre de navigation horizontalement */
+    padding: 0 20px; /* Espacement horizontal */
+    position: relative;
+}
+
+/* Styles pour la marque dans la barre de navigation */
+.navbar-brand {
+    display: flex; /* Utilise le modèle Flexbox pour aligner le logo et le titre */
+    align-items: center; /* Centre verticalement les éléments */
+}
+
+.navbar-brand .logo {
+    height: 60px; /* Hauteur de l'image du logo augmentée pour plus d'impact */
+    margin-right: 20px; /* Espacement à droite du logo */
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Ombre rouge autour du logo pour un effet lumineux */
+}
+
+.navbar-brand .title {
+    height: 60px; /* Hauteur de l'image du titre augmentée */
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Ombre rouge autour du titre */
+}
+
+/* Styles pour les liens de navigation */
+.navbar-links {
+    list-style: none; /* Supprime les puces des listes */
+    display: flex; /* Utilise le modèle Flexbox pour la disposition des liens */
+    gap: 30px; /* Espacement entre les liens */
+}
+
+.navbar-links li {
+    margin: 0; /* Supprime la marge par défaut des éléments de la liste */
+}
+
+.navbar-links a {
+    color: #ffffff; /* Couleur du texte des liens en blanc */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    font-weight: bold; /* Met le texte en gras */
+    transition: color 0.3s, text-shadow 0.3s; /* Ajoute une transition pour le changement de couleur et d'ombre */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Ombre rouge autour du texte des liens */
+}
+
+.navbar-links a:hover {
+    color: #c8102e; /* Couleur du texte des liens au survol en rouge sang */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1); /* Ombre rouge plus intense au survol */
+}
+
+/* Styles pour le bouton d'achat */
+.navbar-button {
+    background-color: #c8102e; /* Couleur de fond rouge sang pour le bouton */
+    color: #ffffff; /* Couleur du texte du bouton en blanc */
+    border: none; /* Supprime les bordures par défaut */
+    padding: 12px 25px; /* Espacement interne du bouton */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    font-weight: bold; /* Met le texte en gras */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Ajoute une transition pour le changement de couleur de fond et d'ombre */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Ombre rouge autour du bouton */
+}
+
+.navbar-button:hover {
+    background-color: #a00d24; /* Couleur de fond du bouton au survol en rouge sang plus foncé */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* Ombre rouge plus intense au survol */
+}
+
+/* Styles pour la ligne de séparation sous la barre de navigation */
+.separator {
+    border: none; /* Supprime les bordures par défaut */
+    background-color: #c8102e; /* Couleur de fond de la ligne de séparation en rouge sang */
+    width: 100%; /* Largeur de la ligne de séparation */
+}
+
+
+/* Styles pour la section principale */
+main {
+    padding: 20px; /* Espacement interne autour du contenu principal */
+}
+
+/* Styles pour la section à propos */
+#about {
+    position: relative;
+    margin-top: -100px;
+    text-align: center; /* Centre le texte et les images dans la section */
+    margin-bottom: 20px; /* Espacement inférieur autour de la section */
+}
+
+#about .about-title {
+    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    margin-bottom: 25px;
+}
+
+/* Styles pour la section des blockquotes */
+.dark-tale-section {
+    position: relative;
+}
+
+/* Conteneur pour les blockquotes */
+.blockquote-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden; /* Cache les blockquotes non visibles */
+    height: 200px; /* Hauteur fixe pour le défilement */
+}
+
+/* Conteneur pour les blockquotes */
+.blockquote-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden; /* Cache les blockquotes non visibles */
+    height: 300px; /* Hauteur fixe pour le défilement */
+    margin-top: -150px;
+}
+
+/* Styles pour les blockquotes */
+.blockquote-item {
+    background-color: #222222; /* Couleur de fond sombre */
+    border-left: 4px solid #c8102e; /* Bordure rouge sang */
+    padding: 20px;
+    margin: 0;
+    font-style: italic;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0; /* Masque par défaut */
+    transform: translateY(100%); /* Positionne les blockquotes hors de la vue */
+}
+
+/* Styles pour le blockquote actif */
+.blockquote-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles pour la flèche */
+.scroll-btn {
+    background: none;
+    border: none;
+    color: #c8102e;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: color 0.3s;
+}
+
+.scroll-btn:hover {
+    color: #ff6666;
+}
+
+/* Styles pour la galerie d'images */
+.image-gallery {
+    text-align: center; /* Centre les images dans la galerie */
+}
+
+.gallery-container {
+    display: flex; /* Utilise le modèle Flexbox pour aligner les images */
+    justify-content: center; /* Centre les images horizontalement */
+    gap: 20px; /* Espacement entre les images */
+}
+
+.image-venom-grum {
+    max-width: 50%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    transform: rotate(180deg); /* Pas de rotation, image à l'endroit */
+    display: block; /* Affiche l'image en tant que bloc pour faciliter le centrage */
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+.image-logo-main {
+    max-width: 50%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    transform: rotateY(180deg);
+    display: block; /* Affiche l'image en tant que bloc pour faciliter le centrage */
+}
+
+/* Styles pour le séparateur visuel */
+.visual-separator {
+    text-align: center; /* Centre l'image du séparateur visuel */
+    margin: 20px 0; /* Espacement vertical autour du séparateur visuel */
+    margin-top: -67px;
+}
+
+.visual-separator img {
+    max-width: 100%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+/* Styles pour la section à propos */
+#roadmap {
+    text-align: center; /* Centre le texte et les images dans la section */
+    margin-bottom: 20px; /* Espacement inférieur autour de la section */
+    margin-top: -150px;
+}
+
+#roadmap .roadmap-title {
+    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+}
+
+
+#roadmap .roadmap-title {
+    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    margin-top: 40px;
+}
+
+#roadmap .roadmap {
+    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    margin-top: -50px;
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+#tokenomics {
+    text-align: center; /* Centre le texte et les images dans la section */
+    margin-bottom: 20px; /* Espacement inférieur autour de la section */
+    margin-top: -50px;
+}
+
+#tokenomics .tokenomics-title {
+    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    margin-top: 40px;
+}
+
+#tokenomics .bubble-tokenomics {   
+    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    margin-top: -50px;  
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+
+#community {
+    display: flex;
+    flex-direction: column; /* Arrange les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    padding: 20px;
+    border-radius: 25px;
+    margin: 50px;
+    margin-top: -25px;
+    margin-bottom: -40px;
+}
+
+#community .isolation-title {
+    max-width: 100%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    margin-bottom: 20px; /* Ajoute un espace entre le titre et le carrousel */
+    text-align: center; /* Centre le texte du titre */
+}
+
+#carousel {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.carousel_slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+}
+
+
+.carousel_slide p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 20px;
+}
+
+.carousel_slide img {
+    width: 250px;
+    height: auto;
+    margin-top: 10px;
+}
+
+#l, #r {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+#l {
+    left: 10px;
+}
+
+#r {
+    right: 10px;
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+/* Styles pour le pied de page */
+
+/* Styles pour le pied de page */
+.satanic-footer {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #111; /* Fond noir très sombre pour maintenir l'ambiance infernale */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #c8102e; /* Bordure rouge sang */
+    position: relative;
+    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7); /* Ombre rouge pour un effet infernal */
+    color: #fff; /* Couleur du texte en blanc pour le contraste */
+}
+
+/* Conteneur du footer pour centrage */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo du footer */
+.logo img {
+    width: 100px; /* Taille agrandie pour plus de présence */
+    height: auto;
+    filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Logo en blanc avec une ombre rouge */
+    margin-bottom: 20px;
+}
+
+/* Liens vers les réseaux sociaux */
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #c8102e; /* Couleur rouge sang des icônes */
+    font-size: 24px; /* Taille agrandie des icônes pour plus d'impact */
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Ajout d'une transition pour l'effet de survol */
+    position: relative;
+    display: inline-block;
+}
+
+.social-links a::before {
+    content: ''; /* Création d'un effet visuel supplémentaire */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.5) 0%, transparent 80%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Positionne derrière l'icône */
+    opacity: 0; /* Initialement invisible */
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff6666; /* Couleur plus vive des icônes au survol */
+    transform: scale(1.2); /* Effet de zoom au survol */
+}
+
+.social-links a:hover::before {
+    opacity: 1; /* Affichage de l'effet de halo au survol */
+}
+
+/* Section de Copyright */
+.copyright {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.copyright p {
+    margin: 0;
+    font-weight: bold;
+    color: #ff3333; /* Rouge vif pour le texte des droits d'auteur */
+}
+
+/* Symbole satanique */
+.satanic-symbol {
+    color: #ff0000; /* Rouge vif pour le symbole */
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+/* Effet de survol du footer */
+.satanic-footer:hover {
+    background-color: #222; /* Changement de couleur subtil au survol */
+    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8); /* Ombre rouge plus intense au survol */
+}
+
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+
+    /* Styles pour la réactivité */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Dispose les éléments de la barre de navigation en colonne sur les petits écrans */
+        align-items: center; /* Centre les éléments horizontalement */
+    }
+
+    .navbar-brand {
+        flex-direction: column; /* Dispose le logo et le titre en colonne sur les petits écrans */
+        align-items: center; /* Centre les éléments horizontalement */
+    }
+
+    .navbar-brand .logo {
+        margin-left: 25px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar-brand .title {
+        margin-bottom: 10px; /* Espacement inférieur entre le logo et le titre */
+        width: 150px;
+        height: 100px;
+    }
+
+    .navbar-links {
+        flex-direction: column; /* Dispose les liens de navigation en colonne */
+        align-items: center; /* Centre les liens horizontalement */
+        margin-top: -15px; /* Espacement supérieur pour les liens en colonne */
+        gap: 10px; /* Espacement entre les éléments de la liste */
+    }
+
+    .navbar-links li {
+        margin: 0; /* Supprime la marge par défaut des éléments de la liste */
+    }
+
+    .navbar-button {
+        margin-top: 15px;
+    }
+
+    .separator {
+        margin-top: 20px;
+    }
+
+    .about-title {
+        margin-top: 75px;
+    }
+    .blockquote-wrapper {
+        margin-top: -60px;
+    }
+}
