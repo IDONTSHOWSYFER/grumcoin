@@ -130,7 +130,7 @@ main {
     max-width: 1000px;
     margin: auto;
     overflow: hidden; /* Cache les blockquotes non visibles */
-    height: 200px; /* Hauteur fixe pour le défilement */
+    height: 300px; /* Hauteur fixe pour le défilement */
 }
 
 /* Conteneur pour les blockquotes */
@@ -212,7 +212,7 @@ main {
 .visual-separator {
     text-align: center; /* Centre l'image du séparateur visuel */
     margin: 20px 0; /* Espacement vertical autour du séparateur visuel */
-    margin-top: -67px;
+    margin-top: -65px;
 }
 
 .visual-separator img {
@@ -500,5 +500,52 @@ main {
     }
     .blockquote-wrapper {
         margin-top: -60px;
+    }
+    .visual-separator {
+        margin-top: -55px;
+    }
+    #roadmap .roadmap-title {
+        margin-top: 50px;
+    }
+    
+    #roadmap .roadmap {
+        margin-top: -60px;
+    }
+
+    #carousel {
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        margin-top: -50px;
+    }
+    
+    .carousel_slide {
+        display: flex;
+        flex-direction: column; /* Dispose le texte et l'image en colonne */
+        align-items: center; /* Centre horizontalement les éléments */
+        text-align: center; /* Centre le texte */
+        box-sizing: border-box;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel_slide p {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .carousel_slide img {
+        width: 250px; /* Vous pouvez ajuster la largeur si nécessaire */
+        height: auto;
+        margin-top: 10px;
+    }    
+    
+    #l {
+        margin-left: 35px;
+    }
+
+    #r {
+        margin-right: 35px;
     }
 }
