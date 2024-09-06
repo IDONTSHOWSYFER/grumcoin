@@ -662,9 +662,20 @@ main {
     
     #l {
         margin-left: 35px; /* Adjust position */
+        margin-top: 25px;
     }
 
     #r {
         margin-right: 35px; /* Adjust position */
+        margin-top: 25px;
+    }
+    
+    fire-div {
+        margin-top: -150px
+    }
+    
+    fire-div img {
+        margin-top: -150px
     }
 }
+
