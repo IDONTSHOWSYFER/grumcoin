@@ -275,6 +275,39 @@ main {
     margin-top: -20px; /* Adjust spacing as needed */
 }
 
+.satanic-container {
+    margin-top: 50px;
+}
+
+.satanic-bar-wrapper {
+    width: 80%;
+    background-color: #222; /* Couleur de fond sombre pour la barre */
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    height: 40px;
+    border: 2px solid #ff3b3b; /* Bordure rouge ardente */
+}
+
+.satanic-loading-bar {
+    height: 100%;
+    background: linear-gradient(to right, #ff0000, #550000); /* Gradient avec rouge sombre */
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 0.5s;
+    box-shadow: 0 0 10px #ff0000; /* Effet de lueur rouge */
+}
+
+.satanic-message {
+    font-size: 20px;
+    color: #ff3b3b;
+    margin-top: 20px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 /* Styles for the tokenomics section */
 #tokenomics {
     text-align: center; /* Center text and images in the section */
