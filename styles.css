@@ -172,9 +172,9 @@ main {
     position: relative;
     max-width: 800px;
     margin: auto;
-    overflow: hidden; /* Hide non-visible blockquotes */
-    height: 300px; /* Fixed height for scrolling */
-    margin-top: -150px;
+    overflow: hidden;
+    height: 300px; /* Ajustez cette valeur si nécessaire */
+    margin-top: 0; /* Ajustez cette valeur si nécessaire */
 }
 
 /* Styles for blockquotes */
@@ -428,7 +428,7 @@ main {
     overflow: hidden;
     display: flex;
     align-items: center;
-    margin-top: -50px;
+    margin-top: 0; /* Ajustez cette valeur si nécessaire */
 }
 
 .carousel_slide {
@@ -472,8 +472,8 @@ main {
 
 .fire-div {
     position: relative; /* Peut aussi être 'absolute' selon le contexte */
-    top: -0px; /* Ajustez la valeur pour mieux positionner la div */
-    max-height: 300px;
+    top: -50px; /* Ajustez cette valeur pour remonter la div */
+    max-height: 100vh;
     overflow: hidden;
     width: 100%;
 }
@@ -624,7 +624,7 @@ main {
     }
 
     #roadmap .roadmap-title {
-        margin-top: 50px; /* Space above title */
+        margin-top: 20px; /* Space above title */
     }
     
     #roadmap .roadmap {
@@ -644,6 +644,7 @@ main {
         align-items: center; /* Center items horizontally */
         text-align: center; /* Center text */
         box-sizing: border-box;
+        margin-top: 0;
         transition: transform 0.5s ease-in-out;
     }
     
