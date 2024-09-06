@@ -472,8 +472,8 @@ main {
 
 .fire-div {
     position: relative; /* Peut aussi être 'absolute' selon le contexte */
-    top: -50px; /* Ajustez cette valeur pour remonter la div */
-    max-height: 100vh;
+    top: 0;
+    max-height: 500px;
     overflow: hidden;
     width: 100%;
 }
@@ -666,8 +666,5 @@ main {
 
     #r {
         margin-right: 35px; /* Adjust position */
-    }
-    .fire-div {
-        margin-top: -150px;
     }
 }
