@@ -667,4 +667,7 @@ main {
     #r {
         margin-right: 35px; /* Adjust position */
     }
+    .fire-div {
+        margin-top: -150px;
+    }
 }
