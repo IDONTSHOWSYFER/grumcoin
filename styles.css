@@ -471,12 +471,13 @@ main {
 }
 
 .fire-div {
-    position: relative; /* Ou 'absolute' si vous préférez */
-    top: -250px; /* Ajustez cette valeur selon vos besoins */
+    position: relative; /* Peut aussi être 'absolute' selon le contexte */
+    top: -250px; /* Ajustez la valeur pour mieux positionner la div */
     max-height: 100vh;
     overflow: hidden;
     width: 100%;
 }
+
 
 /* Footer Styles */
 .satanic-footer {
