@@ -471,9 +471,10 @@ main {
 }
 
 .fire-div {
-    margin-top: 0; /* Pas de décalage négatif */
-    max-height: 100vh; /* Empêche de dépasser la hauteur de la fenêtre */
-    overflow: hidden; /* Si quelque chose dépasse, le cache */
+    position: relative; /* Peut aussi être 'absolute' selon le contexte */
+    top: -50px; /* Ajustez cette valeur pour remonter la div */
+    max-height: 100vh;
+    overflow: hidden;
     width: 100%;
 }
 
