@@ -471,7 +471,10 @@ main {
 }
 
 .fire-div {
-    margin-top: -300px;
+    margin-top: 0; /* Pas de décalage négatif */
+    max-height: 100vh; /* Empêche de dépasser la hauteur de la fenêtre */
+    overflow: hidden; /* Si quelque chose dépasse, le cache */
+    width: 100%;
 }
 
 /* Footer Styles */
