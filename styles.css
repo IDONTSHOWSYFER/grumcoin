@@ -1,284 +1,378 @@
-/* Réinitialisation des marges et des bordures pour tous les éléments */
+/* Reset margins and borders for all elements */
 * {
-    margin: 0; /* Supprime la marge par défaut */
-    padding: 0; /* Supprime le padding par défaut */
-    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale de l'élément */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include borders and padding in element's total width and height */
+    scroll-behavior: smooth;
 }
 
-/* Styles pour le corps du document */
+/* Styles for the body of the document */
 body {
-    font-family: 'Arial', sans-serif; /* Définit la police générale du texte */
-    color: #ffffff; /* Couleur du texte en blanc */
-    background-color: #000000; /* Couleur de fond noire */
-    line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+    font-family: 'Arial', sans-serif; /* General text font */
+    color: #ffffff; /* White text color */
+    background-color: #000000; /* Black background color */
+    line-height: 1.6; /* Line height for readability */
 }
 
-/* Styles pour l'en-tête du site */
+/* Styles for the site header */
 header {
-    background-color: #111111; /* Fond noir très sombre pour une ambiance infernale */
-    padding: 20px 0; /* Espacement vertical augmenté pour plus de présence */
-    border-bottom: 2px solid #c8102e; /* Bordure inférieure rouge sang pour accentuer la séparation */
+    background-color: #111111; /* Very dark black background for a moody feel */
+    padding: 20px 0; /* Increased vertical spacing for prominence */
+    border-bottom: 2px solid #c8102e; /* Blood-red bottom border for emphasis */
     position: relative;
 }
 
-/* Styles pour la barre de navigation */
+/* Styles for the announcement bar */
+.announcement-bar {
+    position: fixed; /* Fixe la barre en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Largeur totale de la page */
+    background-color: #000000; /* Fond noir pour le thème infernal */
+    color: #c8102e; /* Couleur du texte en rouge sang */
+    padding: 10px 0; /* Espacement vertical */
+    text-align: center; /* Centre le texte */
+    font-weight: bold; /* Met le texte en gras */
+    font-size: 16px; /* Taille de police pour le texte */
+    z-index: 9999; /* Assure que la barre est au-dessus des autres éléments */
+    overflow: hidden; /* Cache le texte qui dépasse les limites de la barre */
+}
+
+/* Animation pour faire bouger la barre d'annonce de gauche à droite */
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.announcement-text {
+    display: inline-block; /* Permet à l'élément de se déplacer horizontalement */
+    white-space: nowrap; /* Évite que le texte se coupe */
+    animation: slide 10s linear infinite; /* Anime le texte pour qu'il défile */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Styles for the navigation bar */
 .navbar {
-    display: flex; /* Utilise le modèle Flexbox pour la disposition */
-    justify-content: space-between; /* Espacement égal entre les éléments */
-    align-items: center; /* Centre verticalement les éléments */
-    max-width: 1200px; /* Largeur maximale pour la barre de navigation */
-    margin: 0 auto; /* Centre la barre de navigation horizontalement */
-    padding: 0 20px; /* Espacement horizontal */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Equal spacing between items */
+    align-items: center; /* Vertically center items */
+    max-width: 1200px; /* Maximum width of the navigation bar */
+    margin: 0 auto; /* Center the navigation bar horizontally */
+    margin-top: 50px;
+    padding: 0 20px; /* Horizontal padding */
     position: relative;
 }
 
-/* Styles pour la marque dans la barre de navigation */
+/* Styles for the brand in the navigation bar */
 .navbar-brand {
-    display: flex; /* Utilise le modèle Flexbox pour aligner le logo et le titre */
-    align-items: center; /* Centre verticalement les éléments */
+    display: flex; /* Use Flexbox to align logo and title */
+    align-items: center; /* Vertically center items */
 }
 
 .navbar-brand .logo {
-    height: 60px; /* Hauteur de l'image du logo augmentée pour plus d'impact */
-    margin-right: 20px; /* Espacement à droite du logo */
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Ombre rouge autour du logo pour un effet lumineux */
+    height: 60px; /* Increased logo image height for impact */
+    margin-right: 20px; /* Spacing to the right of the logo */
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Red shadow for a glowing effect */
 }
 
 .navbar-brand .title {
-    height: 60px; /* Hauteur de l'image du titre augmentée */
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Ombre rouge autour du titre */
+    height: 60px; /* Increased height for the title */
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Red shadow for the title */
 }
 
-/* Styles pour les liens de navigation */
+/* Styles for navigation links */
 .navbar-links {
-    list-style: none; /* Supprime les puces des listes */
-    display: flex; /* Utilise le modèle Flexbox pour la disposition des liens */
-    gap: 30px; /* Espacement entre les liens */
+    list-style: none; /* Remove list bullets */
+    display: flex; /* Use Flexbox for link layout */
+    gap: 30px; /* Spacing between links */
 }
 
 .navbar-links li {
-    margin: 0; /* Supprime la marge par défaut des éléments de la liste */
+    margin: 0; /* Remove default margin from list items */
 }
 
 .navbar-links a {
-    color: #ffffff; /* Couleur du texte des liens en blanc */
-    text-decoration: none; /* Supprime le soulignement des liens */
-    font-weight: bold; /* Met le texte en gras */
-    transition: color 0.3s, text-shadow 0.3s; /* Ajoute une transition pour le changement de couleur et d'ombre */
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Ombre rouge autour du texte des liens */
+    color: #ffffff; /* White link text color */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s, text-shadow 0.3s; /* Transition for color and shadow changes */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Red shadow for link text */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .navbar-links a:hover {
-    color: #c8102e; /* Couleur du texte des liens au survol en rouge sang */
-    text-shadow: 0 0 10px rgba(255, 0, 0, 1); /* Ombre rouge plus intense au survol */
+    color: #c8102e; /* Blood-red link color on hover */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1); /* More intense red shadow on hover */
 }
 
-/* Styles pour le bouton d'achat */
+/* Styles for the purchase button */
 .navbar-button {
-    background-color: #c8102e; /* Couleur de fond rouge sang pour le bouton */
-    color: #ffffff; /* Couleur du texte du bouton en blanc */
-    border: none; /* Supprime les bordures par défaut */
-    padding: 12px 25px; /* Espacement interne du bouton */
-    border-radius: 5px; /* Arrondit les coins du bouton */
-    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
-    font-weight: bold; /* Met le texte en gras */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Ajoute une transition pour le changement de couleur de fond et d'ombre */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Ombre rouge autour du bouton */
+    background-color: #c8102e; /* Blood-red background color for the button */
+    color: #ffffff; /* White text color for the button */
+    border: none; /* Remove default borders */
+    padding: 12px 25px; /* Internal padding for the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition for background color and shadow changes */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Red shadow around the button */
 }
 
 .navbar-button:hover {
-    background-color: #a00d24; /* Couleur de fond du bouton au survol en rouge sang plus foncé */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* Ombre rouge plus intense au survol */
+    background-color: #a00d24; /* Darker blood-red background color on hover */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* More intense red shadow on hover */
 }
 
-/* Styles pour la ligne de séparation sous la barre de navigation */
+/* Styles for the separator line under the navigation bar */
 .separator {
-    border: none; /* Supprime les bordures par défaut */
-    background-color: #c8102e; /* Couleur de fond de la ligne de séparation en rouge sang */
-    width: 100%; /* Largeur de la ligne de séparation */
+    border: none; /* Remove default borders */
+    background-color: #c8102e; /* Blood-red background color for the separator line */
+    width: 100%; /* Full width of the separator line */
 }
 
-
-/* Styles pour la section principale */
+/* Styles for the main section */
 main {
-    padding: 20px; /* Espacement interne autour du contenu principal */
+    padding: 20px; /* Internal padding around the main content */
 }
 
-/* Styles pour la section à propos */
+/* Styles for the about section */
 #about {
     position: relative;
-    margin-top: -100px;
-    text-align: center; /* Centre le texte et les images dans la section */
-    margin-bottom: 20px; /* Espacement inférieur autour de la section */
+    text-align: center; /* Center text and images in the section */
+    margin-bottom: 20px; /* Bottom spacing around the section */
 }
 
 #about .about-title {
-    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
+    max-width: 80%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
     margin-bottom: 25px;
+    margin-top: -20px;
 }
 
-/* Styles pour la section des blockquotes */
+/* Styles for the blockquotes section */
 .dark-tale-section {
     position: relative;
 }
 
-/* Conteneur pour les blockquotes */
+/* Container for blockquotes */
 .blockquote-container {
     position: relative;
     max-width: 1000px;
     margin: auto;
-    overflow: hidden; /* Cache les blockquotes non visibles */
-    height: 300px; /* Hauteur fixe pour le défilement */
+    overflow: hidden; /* Hide non-visible blockquotes */
+    height: 300px; /* Fixed height for scrolling */
 }
 
-/* Conteneur pour les blockquotes */
+/* Container for blockquotes */
 .blockquote-wrapper {
     position: relative;
     max-width: 800px;
     margin: auto;
-    overflow: hidden; /* Cache les blockquotes non visibles */
-    height: 300px; /* Hauteur fixe pour le défilement */
+    overflow: hidden; /* Hide non-visible blockquotes */
+    height: 300px; /* Fixed height for scrolling */
     margin-top: -150px;
 }
 
-/* Styles pour les blockquotes */
+/* Styles for blockquotes */
 .blockquote-item {
-    background-color: #222222; /* Couleur de fond sombre */
-    border-left: 4px solid #c8102e; /* Bordure rouge sang */
+    background-color: #222222; /* Dark background color */
+    border-left: 4px solid #c8102e; /* Blood-red left border */
     padding: 20px;
     margin: 0;
     font-style: italic;
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    opacity: 0; /* Masque par défaut */
-    transform: translateY(100%); /* Positionne les blockquotes hors de la vue */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
+    opacity: 0; /* Default hidden state */
+    transform: translateY(100%); /* Position blockquotes out of view */
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Styles pour le blockquote actif */
+/* Styles for the active blockquote */
 .blockquote-item.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Styles pour la flèche */
+/* Styles for the scroll button */
 .scroll-btn {
     background: none;
     border: none;
-    color: #c8102e;
+    color: #c8102e; /* Blood-red color for the button */
     font-size: 24px;
     cursor: pointer;
     position: absolute;
     bottom: 10px;
     right: 10px;
-    transition: color 0.3s;
+    transition: color 0.3s; /* Transition for color change */
 }
 
 .scroll-btn:hover {
-    color: #ff6666;
+    color: #ff6666; /* Lighter red color on hover */
 }
 
-/* Styles pour la galerie d'images */
+/* Styles for the image gallery */
 .image-gallery {
-    text-align: center; /* Centre les images dans la galerie */
+    text-align: center; /* Center images in the gallery */
 }
 
 .gallery-container {
-    display: flex; /* Utilise le modèle Flexbox pour aligner les images */
-    justify-content: center; /* Centre les images horizontalement */
-    gap: 20px; /* Espacement entre les images */
+    display: flex; /* Use Flexbox to align images */
+    justify-content: center; /* Center images horizontally */
+    gap: 20px; /* Spacing between images */
 }
 
 .image-venom-grum {
-    max-width: 50%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
-    transform: rotate(180deg); /* Pas de rotation, image à l'endroit */
-    display: block; /* Affiche l'image en tant que bloc pour faciliter le centrage */
+    max-width: 50%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
+    transform: rotateY(180deg) rotateX(180deg); /* Flip image both vertically and horizontally */
+    display: block; /* Display image as block for centering */
     margin-top: -20px;
     margin-left: -20px;
 }
 
 .image-logo-main {
-    max-width: 50%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
+    max-width: 50%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
     transform: rotateY(180deg);
-    display: block; /* Affiche l'image en tant que bloc pour faciliter le centrage */
+    display: block; /* Display image as block for centering */
 }
 
-/* Styles pour le séparateur visuel */
+/* Styles for the visual separator */
 .visual-separator {
-    text-align: center; /* Centre l'image du séparateur visuel */
-    margin: 20px 0; /* Espacement vertical autour du séparateur visuel */
+    text-align: center; /* Center the visual separator image */
+    margin: 20px 0; /* Vertical spacing around the visual separator */
     margin-top: -65px;
 }
 
 .visual-separator img {
-    max-width: 100%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
+    max-width: 100%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
 }
 
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-
-/* Styles pour la section à propos */
+/* Styles for the roadmap section */
 #roadmap {
-    text-align: center; /* Centre le texte et les images dans la section */
-    margin-bottom: 20px; /* Espacement inférieur autour de la section */
+    text-align: center; /* Center text and images in the section */
+    margin-bottom: 20px; /* Bottom spacing around the section */
     margin-top: -150px;
 }
 
 #roadmap .roadmap-title {
-    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
-}
-
-
-#roadmap .roadmap-title {
-    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
+    max-width: 80%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
     margin-top: 40px;
+    margin-bottom: 25px;
 }
 
 #roadmap .roadmap {
-    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
-    margin-top: -50px;
+    max-width: 90%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
+    margin-top: -20px; /* Adjust spacing as needed */
 }
 
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-
+/* Styles for the tokenomics section */
 #tokenomics {
-    text-align: center; /* Centre le texte et les images dans la section */
-    margin-bottom: 20px; /* Espacement inférieur autour de la section */
+    text-align: center; /* Center text and images in the section */
+    margin-bottom: 20px; /* Bottom spacing around the section */
     margin-top: -50px;
+    width: 100%;
 }
 
 #tokenomics .tokenomics-title {
-    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
+    max-width: 90%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
     margin-top: 40px;
 }
 
-#tokenomics .bubble-tokenomics {   
-    max-width: 80%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
-    margin-top: -50px;  
+#tokenomics .bubble-tokenomics {
+    width: 90%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
+    margin-top: -40px; /* Adjust spacing as needed */
 }
 
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/* Container for the table */
+.tokenomics-table-container {
+    display: flex; /* Flexbox layout to center the table */
+    justify-content: center; /* Center the table horizontally */
+    margin: 30px auto; /* Margin to space the table vertically and horizontally */
+}
 
+/* General style for the table */
+.tokenomics-table {
+    width: 100%; /* Full width of the container */
+    max-width: 800px; /* Maximum width to keep the table at a readable size */
+    border-collapse: collapse; /* Collapse borders to create a single border */
+    background-color: #1a1a1a; /* Dark background color for the entire table */
+    color: #f4f4f4; /* Light color for the text for contrast */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Red shadow for a fiery effect */
+    border-radius: 10px; /* Rounded corners for a more eerie look */
+    overflow: hidden; /* Hide any overflow to maintain rounded corners */
+    border: 2px solid #c8102e; /* Red border around the table for a sinister effect */
+}
 
+/* Style for table headers */
+.tokenomics-table th {
+    background-color: #333; /* Dark background for headers */
+    color: #c8102e; /* Blood-red color for header text */
+    padding: 15px; /* Padding inside header cells */
+    border-bottom: 3px solid #c8102e; /* Thick red border below headers for emphasis */
+    text-align: left; /* Align text to the left */
+    text-transform: uppercase; /* Uppercase text for dramatic effect */
+    font-family: 'Arial Black', Arial, sans-serif; /* Bold and imposing font */
+    letter-spacing: 1px; /* Slight spacing between letters for impact */
+}
+
+/* Style for table cells */
+.tokenomics-table td {
+    background-color: #222; /* Dark background for cells */
+    padding: 15px; /* Padding inside cells */
+    border-bottom: 1px solid #444; /* Subtle border between rows */
+    text-align: left; /* Align text to the left */
+}
+
+/* Style for even rows */
+.tokenomics-table tbody tr:nth-child(even) {
+    background-color: #333; /* Slightly lighter background for even rows */
+}
+
+/* Style for rows on hover */
+.tokenomics-table tbody tr:hover {
+    background-color: #444; /* Lighter background color on hover */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* More intense red shadow on hover */
+    color: #ff6666; /* Text color changes to a brighter red on hover */
+}
+
+/* Style for cells on hover */
+.tokenomics-table tbody td:hover {
+    color: #ff6666; /* Text color changes on hover */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); /* Red glow around text on hover */
+}
+
+/* Style for the table header cell borders */
+.tokenomics-table th {
+    border-right: 2px solid #c8102e; /* Red border on the right of each header cell */
+}
+
+/* Remove the right border on the last header cell */
+.tokenomics-table th:last-child {
+    border-right: none;
+}
+
+/* Style for the last row's bottom border */
+.tokenomics-table tbody tr:last-child td {
+    border-bottom: none; /* Remove bottom border from the last row */
+}
+
+/* Community Section */
 #community {
     display: flex;
-    flex-direction: column; /* Arrange les éléments en colonne */
-    align-items: center; /* Centre les éléments horizontalement */
+    flex-direction: column; /* Arrange elements in a column */
+    align-items: center; /* Center items horizontally */
     padding: 20px;
     border-radius: 25px;
     margin: 50px;
@@ -286,13 +380,14 @@ main {
     margin-bottom: -40px;
 }
 
-#community .isolation-title {
-    max-width: 100%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    height: auto; /* Maintient les proportions de l'image */
-    margin-bottom: 20px; /* Ajoute un espace entre le titre et le carrousel */
-    text-align: center; /* Centre le texte du titre */
+#community .community-title img {
+    max-width: 100%; /* Prevent image from exceeding container width */
+    height: auto; /* Maintain image proportions */
+    margin-bottom: 25px;
+    margin-top: -20px;
 }
 
+/* Carousel Styles */
 #carousel {
     position: relative;
     width: 80%;
@@ -310,7 +405,6 @@ main {
     text-align: center;
 }
 
-
 .carousel_slide p {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.2em;
@@ -319,11 +413,12 @@ main {
 }
 
 .carousel_slide img {
-    width: 250px;
+    width: 250px; /* Adjust width as necessary */
     height: auto;
     margin-top: 10px;
 }
 
+/* Navigation Buttons for Carousel */
 #l, #r {
     position: absolute;
     top: 50%;
@@ -342,39 +437,37 @@ main {
     right: 10px;
 }
 
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-
-/* Styles pour le pied de page */
-
-/* Styles pour le pied de page */
-.satanic-footer {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #111; /* Fond noir très sombre pour maintenir l'ambiance infernale */
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 2px solid #c8102e; /* Bordure rouge sang */
-    position: relative;
-    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7); /* Ombre rouge pour un effet infernal */
-    color: #fff; /* Couleur du texte en blanc pour le contraste */
+.fire-div {
+    margin-top: -300px;
 }
 
-/* Conteneur du footer pour centrage */
+/* Footer Styles */
+.satanic-footer {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #111; /* Dark background for consistency */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #c8102e; /* Red border */
+    position: relative;
+    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7); /* Red shadow */
+    color: #fff; /* White text for contrast */
+}
+
+/* Footer Container */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Logo du footer */
+/* Footer Logo */
 .logo img {
-    width: 100px; /* Taille agrandie pour plus de présence */
+    width: 100px; /* Increased size for visibility */
     height: auto;
-    filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Logo en blanc avec une ombre rouge */
+    filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* White logo with red shadow */
     margin-bottom: 20px;
 }
 
-/* Liens vers les réseaux sociaux */
+/* Social Links */
 .social-links {
     list-style-type: none;
     padding: 0;
@@ -388,16 +481,16 @@ main {
 
 .social-links a {
     text-decoration: none;
-    color: #c8102e; /* Couleur rouge sang des icônes */
-    font-size: 24px; /* Taille agrandie des icônes pour plus d'impact */
+    color: #c8102e; /* Red color for icons */
+    font-size: 24px; /* Larger size for impact */
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease; /* Ajout d'une transition pour l'effet de survol */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition effects */
     position: relative;
     display: inline-block;
 }
 
 .social-links a::before {
-    content: ''; /* Création d'un effet visuel supplémentaire */
+    content: ''; /* Additional visual effect */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -406,21 +499,21 @@ main {
     background: radial-gradient(circle, rgba(255, 0, 0, 0.5) 0%, transparent 80%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Positionne derrière l'icône */
-    opacity: 0; /* Initialement invisible */
+    z-index: -1; /* Positioned behind icon */
+    opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #ff6666; /* Couleur plus vive des icônes au survol */
-    transform: scale(1.2); /* Effet de zoom au survol */
+    color: #ff6666; /* Brighter color on hover */
+    transform: scale(1.2); /* Zoom effect on hover */
 }
 
 .social-links a:hover::before {
-    opacity: 1; /* Affichage de l'effet de halo au survol */
+    opacity: 1; /* Show halo effect on hover */
 }
 
-/* Section de Copyright */
+/* Copyright Section */
 .copyright {
     margin-top: 20px;
     font-size: 18px;
@@ -429,103 +522,90 @@ main {
 .copyright p {
     margin: 0;
     font-weight: bold;
-    color: #ff3333; /* Rouge vif pour le texte des droits d'auteur */
+    color: #ff3333; /* Bright red for copyright text */
 }
 
-/* Symbole satanique */
-.satanic-symbol {
-    color: #ff0000; /* Rouge vif pour le symbole */
-    font-size: 24px;
-    padding-left: 5px;
-}
-
-/* Effet de survol du footer */
+/* Footer Hover Effect */
 .satanic-footer:hover {
-    background-color: #222; /* Changement de couleur subtil au survol */
-    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8); /* Ombre rouge plus intense au survol */
+    background-color: #222; /* Subtle color change on hover */
+    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8); /* More intense shadow on hover */
 }
 
-
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
-
-
-    /* Styles pour la réactivité */
+/* Responsive Styles */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Dispose les éléments de la barre de navigation en colonne sur les petits écrans */
-        align-items: center; /* Centre les éléments horizontalement */
+        flex-direction: column; /* Stack navigation items vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
     }
 
     .navbar-brand {
-        flex-direction: column; /* Dispose le logo et le titre en colonne sur les petits écrans */
-        align-items: center; /* Centre les éléments horizontalement */
+        flex-direction: column; /* Stack logo and title vertically */
+        align-items: center; /* Center items horizontally */
     }
 
     .navbar-brand .logo {
         margin-left: 25px;
-        width: 50px;
+        width: 50px; /* Smaller logo size */
         height: 50px;
     }
 
     .navbar-brand .title {
-        margin-bottom: 10px; /* Espacement inférieur entre le logo et le titre */
-        width: 150px;
+        margin-bottom: 10px; /* Space between logo and title */
+        width: 150px; /* Adjusted width */
         height: 100px;
     }
 
     .navbar-links {
-        flex-direction: column; /* Dispose les liens de navigation en colonne */
-        align-items: center; /* Centre les liens horizontalement */
-        margin-top: -15px; /* Espacement supérieur pour les liens en colonne */
-        gap: 10px; /* Espacement entre les éléments de la liste */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links horizontally */
+        margin-top: -15px; /* Space above links */
+        gap: 10px; /* Space between links */
     }
 
     .navbar-links li {
-        margin: 0; /* Supprime la marge par défaut des éléments de la liste */
+        margin: 0; /* Remove default list item margin */
     }
 
     .navbar-button {
-        margin-top: 15px;
+        margin-top: 15px; /* Space above button */
     }
 
     .separator {
-        margin-top: 20px;
+        margin-top: 25px; /* Space above separator */
     }
 
     .about-title {
-        margin-top: 75px;
+        margin-top: 75px; /* Space above the title */
     }
     
     .blockquote-wrapper {
-        margin-top: -60px;
+        margin-top: -60px; /* Adjust spacing */
     }
 
     .visual-separator {
-        margin-top: -55px;
+        margin-top: -55px; /* Adjust spacing */
     }
 
     #roadmap .roadmap-title {
-        margin-top: 50px;
+        margin-top: 50px; /* Space above title */
     }
     
     #roadmap .roadmap {
-        margin-top: -60px;
+        margin-top: -60px; /* Adjust spacing */
     }
 
     #carousel {
         position: relative;
         width: 80%;
         max-width: 800px;
-        margin-top: -50px;
+        margin-top: -50px; /* Adjust spacing */
     }
     
     .carousel_slide {
         display: flex;
-        flex-direction: column; /* Dispose le texte et l'image en colonne */
-        align-items: center; /* Centre horizontalement les éléments */
-        text-align: center; /* Centre le texte */
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
         box-sizing: border-box;
         transition: transform 0.5s ease-in-out;
     }
@@ -538,16 +618,16 @@ main {
     }
     
     .carousel_slide img {
-        width: 250px; /* Vous pouvez ajuster la largeur si nécessaire */
+        width: 250px; /* Adjust width as necessary */
         height: auto;
         margin-top: 10px;
     }    
     
     #l {
-        margin-left: 35px;
+        margin-left: 35px; /* Adjust position */
     }
 
     #r {
-        margin-right: 35px;
+        margin-right: 35px; /* Adjust position */
     }
 }
