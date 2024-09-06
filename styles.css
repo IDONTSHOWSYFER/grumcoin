@@ -478,6 +478,9 @@ main {
     width: 100%;
 }
 
+.fire-div img {
+    margin-top: -200px; /* Ajustez cette valeur pour remonter l'image */
+}
 
 /* Footer Styles */
 .satanic-footer {
