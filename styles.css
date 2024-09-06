@@ -473,7 +473,7 @@ main {
 .fire-div {
     position: relative; /* Peut aussi être 'absolute' selon le contexte */
     top: -0px; /* Ajustez la valeur pour mieux positionner la div */
-    max-height: 500px;
+    max-height: 300px;
     overflow: hidden;
     width: 100%;
 }
