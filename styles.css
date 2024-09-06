@@ -472,14 +472,10 @@ main {
 
 .fire-div {
     position: relative; /* Peut aussi être 'absolute' selon le contexte */
-    top: -250px; /* Ajustez la valeur pour mieux positionner la div */
-    max-height: 100vh;
+    top: -0px; /* Ajustez la valeur pour mieux positionner la div */
+    max-height: 50vh;
     overflow: hidden;
     width: 100%;
-}
-
-.fire-div img {
-    margin-top: -200px; /* Ajustez cette valeur pour remonter l'image */
 }
 
 /* Footer Styles */
