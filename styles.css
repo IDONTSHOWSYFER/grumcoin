@@ -668,11 +668,11 @@ main {
     
     #l {
         margin-left: -10px; /* Adjust position */
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     #r {
         margin-right: -10px; /* Adjust position */
-        margin-top: 10px;
+        margin-top: 20px;
     }
 }
