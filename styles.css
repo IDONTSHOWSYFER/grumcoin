@@ -417,7 +417,6 @@ main {
     max-width: 100%; /* Prevent image from exceeding container width */
     height: auto; /* Maintain image proportions */
     margin-bottom: 25px;
-    margin-top: -20px;
 }
 
 /* Carousel Styles */
