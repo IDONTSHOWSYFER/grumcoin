@@ -471,12 +471,19 @@ main {
 }
 
 .fire-div {
-    position: relative; /* Peut aussi être 'absolute' selon le contexte */
-    top: 0;
-    max-height: 500px;
-    overflow: hidden;
-    width: 100%;
+    bottom: 10px; /* Lève l'image de 10px par rapport au bas */
+    left: 0;
+    width: 100%; /* Prend toute la largeur de l'écran */
+    z-index: 2; /* Toujours devant le footer */
+    overflow: hidden; /* Empêche le débordement */
 }
+
+.fire {
+    width: 100%; /* L'image prend toute la largeur disponible */
+    height: auto; /* Ajuste la hauteur de manière proportionnelle */
+    display: block; /* Assure que l'image se comporte comme un élément de bloc */
+}
+
 
 /* Footer Styles */
 .satanic-footer {
@@ -661,21 +668,12 @@ main {
     }    
     
     #l {
-        margin-left: 35px; /* Adjust position */
-        margin-top: 25px;
+        margin-left: -10px; /* Adjust position */
+        margin-top: 10px;
     }
 
     #r {
-        margin-right: 35px; /* Adjust position */
-        margin-top: 25px;
-    }
-    
-    fire-div {
-        margin-top: -150px
-    }
-    
-    fire-div img {
-        margin-top: -150px
+        margin-right: -10px; /* Adjust position */
+        margin-top: 10px;
     }
 }
-
