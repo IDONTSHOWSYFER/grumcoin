@@ -574,15 +574,6 @@ main {
     box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8); /* More intense shadow on hover */
 }
 
-body {
-    background-color: black;
-    color: crimson;
-    font-family: 'Lucifer', sans-serif;
-    text-shadow: 2px 2px 5px red;
-    margin: 0;
-    padding: 0;
-}
-
 #inferno-wrapper {
     padding: 30px;
     margin: 20px auto;
