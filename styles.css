@@ -574,6 +574,103 @@ main {
     box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8); /* More intense shadow on hover */
 }
 
+body {
+    background-color: black;
+    color: crimson;
+    font-family: 'Lucifer', sans-serif;
+    text-shadow: 2px 2px 5px red;
+    margin: 0;
+    padding: 0;
+}
+
+#inferno-wrapper {
+    padding: 30px;
+    margin: 20px auto;
+    background-color: #1a1a1a;
+    border: 5px solid red;
+    border-radius: 13px;
+    box-shadow: 0 0 30px red;
+    max-width: 1200px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.hell-title {
+    color: red;
+    font-size: 55px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    text-shadow: 5px 5px 15px black;
+    animation: flicker 4s infinite;
+    margin-bottom: 20px;
+}
+
+.hell-subtitle {
+    color: crimson;
+    font-size: 45px;
+    text-shadow: 3px 3px 15px red;
+    margin-bottom: 20px;
+    border-bottom: 3px solid red;
+    padding-bottom: 10px;
+}
+
+.hell-paragraph {
+    font-size: 20px;
+    line-height: 1.8;
+    color: crimson;
+    text-shadow: 3px 3px 10px black;
+    margin-bottom: 20px;
+}
+
+.hell-list {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.hell-item::before {
+    content: "☠ ";
+    margin-right: 10px;
+    color: darkred;
+    font-size: 24px;
+}
+
+.hell-item {
+    margin-bottom: 10px;
+    color: crimson;
+    font-size: 18px;
+    text-shadow: 2px 2px 8px black;
+}
+
+.hell-quote {
+    background-color: #2e2e2e;
+    color: crimson;
+    padding: 20px;
+    border-left: 6px solid red;
+    font-style: italic;
+    text-shadow: 2px 2px 8px red;
+    box-shadow: 0 0 20px crimson;
+    margin: 20px 0;
+}
+
+.hell-conclusion {
+    color: crimson;
+    text-transform: uppercase;
+    font-size: 35px;
+    text-shadow: 4px 4px 10px red;
+    margin-top: 30px;
+    text-align: center;
+}
+
+@keyframes flicker {
+    0%, 19%, 23%, 25%, 50%, 55%, 100% {
+        opacity: 1;
+    }
+    21%, 24%, 54% {
+        opacity: 0.3;
+    }
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .navbar {
@@ -668,11 +765,11 @@ main {
     
     #l {
         margin-left: -10px; /* Adjust position */
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     #r {
         margin-right: -10px; /* Adjust position */
-        margin-top: 20px;
+        margin-top: 10px;
     }
 }
