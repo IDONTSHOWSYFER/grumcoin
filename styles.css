@@ -1,41 +1,41 @@
 /* Reset margins and borders for all elements */
 * {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    box-sizing: border-box; /* Include borders and padding in element's total width and height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
 /* Styles for the body of the document */
 body {
-    font-family: 'Arial', sans-serif; /* General text font */
-    color: #ffffff; /* White text color */
-    background-color: #000000; /* Black background color */
-    line-height: 1.6; /* Line height for readability */
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    line-height: 1.6;
 }
 
 /* Styles for the site header */
 header {
-    background-color: #111111; /* Very dark black background for a moody feel */
-    padding: 20px 0; /* Increased vertical spacing for prominence */
-    border-bottom: 2px solid #c8102e; /* Blood-red bottom border for emphasis */
+    background-color: #111111;
+    padding: 20px 0;
+    border-bottom: 2px solid #c8102e;
     position: relative;
 }
 
 /* Styles for the announcement bar */
 .announcement-bar {
-    position: fixed; /* Fixe la barre en haut de la page */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Largeur totale de la page */
-    background-color: #000000; /* Fond noir pour le thème infernal */
-    color: #c8102e; /* Couleur du texte en rouge sang */
-    padding: 10px 0; /* Espacement vertical */
-    text-align: center; /* Centre le texte */
-    font-weight: bold; /* Met le texte en gras */
-    font-size: 16px; /* Taille de police pour le texte */
-    z-index: 9999; /* Assure que la barre est au-dessus des autres éléments */
-    overflow: hidden; /* Cache le texte qui dépasse les limites de la barre */
+    width: 100%;
+    background-color: #000000;
+    color: #c8102e;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 9999;
+    overflow: hidden;
 }
 
 /* Animation pour faire bouger la barre d'annonce de gauche à droite */
@@ -49,106 +49,106 @@ header {
 }
 
 .announcement-text {
-    display: inline-block; /* Permet à l'élément de se déplacer horizontalement */
-    white-space: nowrap; /* Évite que le texte se coupe */
-    animation: slide 10s linear infinite; /* Anime le texte pour qu'il défile */
+    display: inline-block;
+    white-space: nowrap;
+    animation: slide 10s linear infinite;
     font-family: 'Times New Roman', Times, serif;
 }
 
 /* Styles for the navigation bar */
 .navbar {
-    display: flex; /* Use Flexbox for layout */
-    justify-content: space-between; /* Equal spacing between items */
-    align-items: center; /* Vertically center items */
-    max-width: 1200px; /* Maximum width of the navigation bar */
-    margin: 0 auto; /* Center the navigation bar horizontally */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
     margin-top: 50px;
-    padding: 0 20px; /* Horizontal padding */
+    padding: 0 20px;
     position: relative;
 }
 
 /* Styles for the brand in the navigation bar */
 .navbar-brand {
-    display: flex; /* Use Flexbox to align logo and title */
-    align-items: center; /* Vertically center items */
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand .logo {
-    height: 60px; /* Increased logo image height for impact */
-    margin-right: 20px; /* Spacing to the right of the logo */
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Red shadow for a glowing effect */
+    height: 60px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
 .navbar-brand .title {
-    height: 60px; /* Increased height for the title */
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Red shadow for the title */
+    height: 60px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
 /* Styles for navigation links */
 .navbar-links {
-    list-style: none; /* Remove list bullets */
-    display: flex; /* Use Flexbox for link layout */
-    gap: 30px; /* Spacing between links */
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
 .navbar-links li {
-    margin: 0; /* Remove default margin from list items */
+    margin: 0;
 }
 
 .navbar-links a {
-    color: #ffffff; /* White link text color */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: bold; /* Bold text */
-    transition: color 0.3s, text-shadow 0.3s; /* Transition for color and shadow changes */
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Red shadow for link text */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
     font-family: 'Times New Roman', Times, serif;
 }
 
 .navbar-links a:hover {
-    color: #c8102e; /* Blood-red link color on hover */
-    text-shadow: 0 0 10px rgba(255, 0, 0, 1); /* More intense red shadow on hover */
+    color: #c8102e;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1);
 }
 
 /* Styles for the purchase button */
 .navbar-button {
-    background-color: #c8102e; /* Blood-red background color for the button */
-    color: #ffffff; /* White text color for the button */
-    border: none; /* Remove default borders */
-    padding: 12px 25px; /* Internal padding for the button */
-    border-radius: 5px; /* Rounded corners for the button */
-    cursor: pointer; /* Change cursor to indicate it's clickable */
-    font-weight: bold; /* Bold text */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transition for background color and shadow changes */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Red shadow around the button */
+    background-color: #c8102e;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
 }
 
 .navbar-button:hover {
-    background-color: #a00d24; /* Darker blood-red background color on hover */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* More intense red shadow on hover */
+    background-color: #a00d24;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1);
 }
 
 /* Styles for the separator line under the navigation bar */
 .separator {
-    border: none; /* Remove default borders */
-    background-color: #c8102e; /* Blood-red background color for the separator line */
-    width: 100%; /* Full width of the separator line */
+    border: none;
+    background-color: #c8102e;
+    width: 100%;
 }
 
 /* Styles for the main section */
 main {
-    padding: 20px; /* Internal padding around the main content */
+    padding: 20px;
 }
 
 /* Styles for the about section */
 #about {
     position: relative;
-    text-align: center; /* Center text and images in the section */
-    margin-bottom: 20px; /* Bottom spacing around the section */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #about .about-title {
-    max-width: 80%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 80%;
+    height: auto;
     margin-bottom: 25px;
     margin-top: -20px;
 }
@@ -163,8 +163,8 @@ main {
     position: relative;
     max-width: 1000px;
     margin: auto;
-    overflow: hidden; /* Hide non-visible blockquotes */
-    height: 300px; /* Fixed height for scrolling */
+    overflow: hidden;
+    height: 300px;
 }
 
 /* Container for blockquotes */
@@ -172,24 +172,24 @@ main {
     position: relative;
     max-width: 800px;
     margin: auto;
-    overflow: hidden; /* Hide non-visible blockquotes */
-    height: 300px; /* Fixed height for scrolling */
+    overflow: hidden;
+    height: 300px; 
     margin-top: -150px;
 }
 
 /* Styles for blockquotes */
 .blockquote-item {
-    background-color: #222222; /* Dark background color */
-    border-left: 4px solid #c8102e; /* Blood-red left border */
+    background-color: #222222;
+    border-left: 4px solid #c8102e;
     padding: 20px;
     margin: 0;
     font-style: italic;
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
-    opacity: 0; /* Default hidden state */
-    transform: translateY(100%); /* Position blockquotes out of view */
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+    opacity: 0;
+    transform: translateY(100%);
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -203,76 +203,76 @@ main {
 .scroll-btn {
     background: none;
     border: none;
-    color: #c8102e; /* Blood-red color for the button */
+    color: #c8102e;
     font-size: 24px;
     cursor: pointer;
     position: absolute;
     bottom: 10px;
     right: 10px;
-    transition: color 0.3s; /* Transition for color change */
+    transition: color 0.3s;
 }
 
 .scroll-btn:hover {
-    color: #ff6666; /* Lighter red color on hover */
+    color: #ff6666;
 }
 
 /* Styles for the image gallery */
 .image-gallery {
-    text-align: center; /* Center images in the gallery */
+    text-align: center;
 }
 
 .gallery-container {
-    display: flex; /* Use Flexbox to align images */
-    justify-content: center; /* Center images horizontally */
-    gap: 20px; /* Spacing between images */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .image-venom-grum {
-    max-width: 50%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    transform: rotateY(180deg) rotateX(180deg); /* Flip image both vertically and horizontally */
-    display: block; /* Display image as block for centering */
+    max-width: 50%;
+    height: auto;
+    transform: rotateY(180deg) rotateX(180deg);
+    display: block;
     margin-top: -20px;
     margin-left: -20px;
 }
 
 .image-logo-main {
-    max-width: 50%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 50%;
+    height: auto;
     transform: rotateY(180deg);
-    display: block; /* Display image as block for centering */
+    display: block;
 }
 
 /* Styles for the visual separator */
 .visual-separator {
-    text-align: center; /* Center the visual separator image */
-    margin: 20px 0; /* Vertical spacing around the visual separator */
+    text-align: center;
+    margin: 20px 0;
     margin-top: -65px;
 }
 
 .visual-separator img {
-    max-width: 100%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 100%;
+    height: auto;
 }
 
 /* Styles for the roadmap section */
 #roadmap {
-    text-align: center; /* Center text and images in the section */
-    margin-bottom: 20px; /* Bottom spacing around the section */
+    text-align: center;
+    margin-bottom: 20px;
     margin-top: -150px;
 }
 
 #roadmap .roadmap-title {
-    max-width: 80%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 80%;
+    height: auto;
     margin-top: 40px;
     margin-bottom: 25px;
 }
 
 #roadmap .roadmap {
-    max-width: 90%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    margin-top: -20px; /* Adjust spacing as needed */
+    max-width: 90%;
+    height: auto;
+    margin-top: -20px;
 }
 
 .satanic-container {
@@ -281,23 +281,23 @@ main {
 
 .satanic-bar-wrapper {
     width: 80%;
-    background-color: #222; /* Couleur de fond sombre pour la barre */
+    background-color: #222;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
     height: 40px;
-    border: 2px solid #ff3b3b; /* Bordure rouge ardente */
+    border: 2px solid #ff3b3b;
 }
 
 .satanic-loading-bar {
     height: 100%;
-    background: linear-gradient(to right, #ff0000, #550000); /* Gradient avec rouge sombre */
+    background: linear-gradient(to right, #ff0000, #550000);
     border-radius: 8px;
     position: absolute;
     left: 0;
     top: 0;
     transition: width 0.5s;
-    box-shadow: 0 0 10px #ff0000; /* Effet de lueur rouge */
+    box-shadow: 0 0 10px #ff0000;
 }
 
 .satanic-message {
@@ -310,85 +310,85 @@ main {
 
 /* Styles for the tokenomics section */
 #tokenomics {
-    text-align: center; /* Center text and images in the section */
-    margin-bottom: 20px; /* Bottom spacing around the section */
+    text-align: center;
+    margin-bottom: 20px;
     margin-top: -50px;
     width: 100%;
 }
 
 #tokenomics .tokenomics-title {
-    max-width: 90%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 90%;
+    height: auto;
     margin-top: 40px;
 }
 
 #tokenomics .bubble-tokenomics {
-    width: 90%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    margin-top: -40px; /* Adjust spacing as needed */
+    width: 90%;
+    height: auto;
+    margin-top: -40px;
 }
 
 /* Container for the table */
 .tokenomics-table-container {
-    display: flex; /* Flexbox layout to center the table */
-    justify-content: center; /* Center the table horizontally */
-    margin: 30px auto; /* Margin to space the table vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
 }
 
 /* General style for the table */
 .tokenomics-table {
-    width: 100%; /* Full width of the container */
-    max-width: 800px; /* Maximum width to keep the table at a readable size */
-    border-collapse: collapse; /* Collapse borders to create a single border */
-    background-color: #1a1a1a; /* Dark background color for the entire table */
-    color: #f4f4f4; /* Light color for the text for contrast */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Red shadow for a fiery effect */
-    border-radius: 10px; /* Rounded corners for a more eerie look */
-    overflow: hidden; /* Hide any overflow to maintain rounded corners */
-    border: 2px solid #c8102e; /* Red border around the table for a sinister effect */
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    border-radius: 10px; 
+    overflow: hidden;
+    border: 2px solid #c8102e;
 }
 
 /* Style for table headers */
 .tokenomics-table th {
-    background-color: #333; /* Dark background for headers */
-    color: #c8102e; /* Blood-red color for header text */
-    padding: 15px; /* Padding inside header cells */
-    border-bottom: 3px solid #c8102e; /* Thick red border below headers for emphasis */
-    text-align: left; /* Align text to the left */
-    text-transform: uppercase; /* Uppercase text for dramatic effect */
-    font-family: 'Arial Black', Arial, sans-serif; /* Bold and imposing font */
-    letter-spacing: 1px; /* Slight spacing between letters for impact */
+    background-color: #333;
+    color: #c8102e;
+    padding: 15px;
+    border-bottom: 3px solid #c8102e;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'Arial Black', Arial, sans-serif;
+    letter-spacing: 1px;
 }
 
 /* Style for table cells */
 .tokenomics-table td {
-    background-color: #222; /* Dark background for cells */
-    padding: 15px; /* Padding inside cells */
-    border-bottom: 1px solid #444; /* Subtle border between rows */
-    text-align: left; /* Align text to the left */
+    background-color: #222;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    text-align: left;
 }
 
 /* Style for even rows */
 .tokenomics-table tbody tr:nth-child(even) {
-    background-color: #333; /* Slightly lighter background for even rows */
+    background-color: #333;
 }
 
 /* Style for rows on hover */
 .tokenomics-table tbody tr:hover {
-    background-color: #444; /* Lighter background color on hover */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* More intense red shadow on hover */
-    color: #ff6666; /* Text color changes to a brighter red on hover */
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    color: #ff6666;
 }
 
 /* Style for cells on hover */
 .tokenomics-table tbody td:hover {
-    color: #ff6666; /* Text color changes on hover */
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); /* Red glow around text on hover */
+    color: #ff6666;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
 }
 
 /* Style for the table header cell borders */
 .tokenomics-table th {
-    border-right: 2px solid #c8102e; /* Red border on the right of each header cell */
+    border-right: 2px solid #c8102e;
 }
 
 /* Remove the right border on the last header cell */
@@ -398,14 +398,14 @@ main {
 
 /* Style for the last row's bottom border */
 .tokenomics-table tbody tr:last-child td {
-    border-bottom: none; /* Remove bottom border from the last row */
+    border-bottom: none;
 }
 
 /* Community Section */
 #community {
     display: flex;
-    flex-direction: column; /* Arrange elements in a column */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     border-radius: 25px;
     margin: 50px;
@@ -414,8 +414,8 @@ main {
 }
 
 #community .community-title img {
-    max-width: 100%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 100%;
+    height: auto;
     margin-bottom: 25px;
 }
 
@@ -445,7 +445,7 @@ main {
 }
 
 .carousel_slide img {
-    width: 250px; /* Adjust width as necessary */
+    width: 250px;
     height: auto;
     margin-top: 10px;
 }
@@ -470,30 +470,30 @@ main {
 }
 
 .fire-div {
-    bottom: 10px; /* Lève l'image de 10px par rapport au bas */
+    bottom: 10px;
     left: 0;
-    width: 100%; /* Prend toute la largeur de l'écran */
-    z-index: 2; /* Toujours devant le footer */
-    overflow: hidden; /* Empêche le débordement */
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
 }
 
 .fire {
-    width: 100%; /* L'image prend toute la largeur disponible */
-    height: auto; /* Ajuste la hauteur de manière proportionnelle */
-    display: block; /* Assure que l'image se comporte comme un élément de bloc */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
 /* Footer Styles */
 .satanic-footer {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #111; /* Dark background for consistency */
+    background-color: #111;
     padding: 40px 20px;
     text-align: center;
-    border-top: 2px solid #c8102e; /* Red border */
+    border-top: 2px solid #c8102e;
     position: relative;
-    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7); /* Red shadow */
-    color: #fff; /* White text for contrast */
+    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7);
+    color: #fff;
 }
 
 /* Footer Container */
@@ -504,9 +504,9 @@ main {
 
 /* Footer Logo */
 .logo img {
-    width: 100px; /* Increased size for visibility */
+    width: 100px;
     height: auto;
-    filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* White logo with red shadow */
+    filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
     margin-bottom: 20px;
 }
 
@@ -524,16 +524,16 @@ main {
 
 .social-links a {
     text-decoration: none;
-    color: #c8102e; /* Red color for icons */
-    font-size: 24px; /* Larger size for impact */
+    color: #c8102e;
+    font-size: 24px;
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transition effects */
+    transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
     display: inline-block;
 }
 
 .social-links a::before {
-    content: ''; /* Additional visual effect */
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -542,18 +542,18 @@ main {
     background: radial-gradient(circle, rgba(255, 0, 0, 0.5) 0%, transparent 80%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Positioned behind icon */
-    opacity: 0; /* Initially hidden */
+    z-index: -1;
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #ff6666; /* Brighter color on hover */
-    transform: scale(1.2); /* Zoom effect on hover */
+    color: #ff6666;
+    transform: scale(1.2);
 }
 
 .social-links a:hover::before {
-    opacity: 1; /* Show halo effect on hover */
+    opacity: 1;
 }
 
 /* Copyright Section */
@@ -565,18 +565,18 @@ main {
 .copyright p {
     margin: 0;
     font-weight: bold;
-    color: #ff3333; /* Bright red for copyright text */
+    color: #ff3333;
 }
 
 .copyright .warning {
-     font-size: 7px;
+     font-size: 11px;
     font-weight: normal;
 }
 
 /* Footer Hover Effect */
 .satanic-footer:hover {
-    background-color: #222; /* Subtle color change on hover */
-    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8); /* More intense shadow on hover */
+    background-color: #222;
+    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8);
 }
 
 #inferno-wrapper {
@@ -670,78 +670,78 @@ main {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Stack navigation items vertically on smaller screens */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column;
+        align-items: center;
     }
 
     .navbar-brand {
-        flex-direction: column; /* Stack logo and title vertically */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column;
+        align-items: center;
     }
 
     .navbar-brand .logo {
         margin-left: 25px;
-        width: 50px; /* Smaller logo size */
+        width: 50px;
         height: 50px;
     }
 
     .navbar-brand .title {
-        margin-bottom: 10px; /* Space between logo and title */
-        width: 150px; /* Adjusted width */
+        margin-bottom: 10px;
+        width: 150px;
         height: 100px;
     }
 
     .navbar-links {
-        flex-direction: column; /* Stack links vertically */
-        align-items: center; /* Center links horizontally */
-        margin-top: -15px; /* Space above links */
-        gap: 10px; /* Space between links */
+        flex-direction: column;
+        align-items: center;
+        margin-top: -15px;
+        gap: 10px;
     }
 
     .navbar-links li {
-        margin: 0; /* Remove default list item margin */
+        margin: 0;
     }
 
     .navbar-button {
-        margin-top: 15px; /* Space above button */
+        margin-top: 15px;
     }
 
     .separator {
-        margin-top: 25px; /* Space above separator */
+        margin-top: 25px;
     }
 
     .about-title {
-        margin-top: 75px; /* Space above the title */
+        margin-top: 75px;
     }
     
     .blockquote-wrapper {
-        margin-top: -60px; /* Adjust spacing */
+        margin-top: -60px;
     }
 
     .visual-separator {
-        margin-top: -50px; /* Adjust spacing */
+        margin-top: -50px;
     }
 
     #roadmap .roadmap-title {
-        margin-top: 50px; /* Space above title */
+        margin-top: 50px;
     }
     
     #roadmap .roadmap {
-        margin-top: -60px; /* Adjust spacing */
+        margin-top: -60px;
     }
 
     #carousel {
         position: relative;
         width: 80%;
         max-width: 800px;
-        margin-top: -50px; /* Adjust spacing */
+        margin-top: -50px;
     }
     
     .carousel_slide {
         display: flex;
-        flex-direction: column; /* Stack text and image vertically */
-        align-items: center; /* Center items horizontally */
-        text-align: center; /* Center text */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         box-sizing: border-box;
         transition: transform 0.5s ease-in-out;
     }
@@ -754,18 +754,18 @@ main {
     }
     
     .carousel_slide img {
-        width: 250px; /* Adjust width as necessary */
+        width: 250px;
         height: auto;
         margin-top: 10px;
     }    
     
     #l {
-        margin-left: -10px; /* Adjust position */
+        margin-left: -10px;
         margin-top: 10px;
     }
 
     #r {
-        margin-right: -10px; /* Adjust position */
+        margin-right: -10px;
         margin-top: 10px;
     }
 }
