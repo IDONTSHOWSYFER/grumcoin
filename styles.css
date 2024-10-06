@@ -625,7 +625,7 @@ main {
 }
 
 .hell-item::before {
-    content: "☠ ";
+    content: "⛧";
     margin-right: 10px;
     color: darkred;
     font-size: 24px;
