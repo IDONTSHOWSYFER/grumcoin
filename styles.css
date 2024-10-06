@@ -568,6 +568,11 @@ main {
     color: #ff3333; /* Bright red for copyright text */
 }
 
+.copyright .warning {
+     font-size: 10px;
+    font-weight: normal;
+}
+
 /* Footer Hover Effect */
 .satanic-footer:hover {
     background-color: #222; /* Subtle color change on hover */
