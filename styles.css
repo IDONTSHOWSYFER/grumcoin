@@ -768,4 +768,12 @@ main {
         margin-right: -10px;
         margin-top: 10px;
     }
+
+        .custom-link {
+        color: rgb(216, 19, 58);
+    }
+
+    .custom-link:hover {
+        color: rgb(255, 0, 51);
+    }
 }
