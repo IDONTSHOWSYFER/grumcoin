@@ -1,12 +1,15 @@
-// Burger
+// script.js
 
+// --- Fonctionnalité du Menu Burger ---
 document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.navbar-links');
     const navLinksLi = document.querySelectorAll('.navbar-links li');
+    const closeBtn = document.querySelector('.navbar-links .close-menu a');
 
     // Fonction pour activer/désactiver le menu
-    burger.addEventListener('click', () => {
+    const toggleMenu = (e) => {
+        e.stopPropagation(); // Empêche le clic de se propager
         navLinks.classList.toggle('active');
 
         // Animer les liens de navigation
@@ -20,12 +23,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Animation de l'icône burger
         burger.classList.toggle('toggle');
+    };
+
+    // Ouvrir/fermer le menu en cliquant sur le burger
+    burger.addEventListener('click', toggleMenu);
+
+    // Fermer le menu en cliquant sur le bouton de fermeture
+    closeBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+        navLinks.classList.remove('active');
+
+        // Réinitialiser les animations des liens
+        navLinksLi.forEach((link) => {
+            link.style.animation = '';
+        });
+
+        // Réinitialiser l'animation du burger
+        burger.classList.remove('toggle');
+    });
+
+    // Fermer le menu en cliquant en dehors du menu burger
+    document.addEventListener('click', (e) => {
+        // Vérifie si le menu est ouvert et si le clic est en dehors du menu et du burger
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !burger.contains(e.target)) {
+            navLinks.classList.remove('active');
+
+            // Réinitialiser les animations des liens
+            navLinksLi.forEach((link) => {
+                link.style.animation = '';
+            });
+
+            // Réinitialiser l'animation du burger
+            burger.classList.remove('toggle');
+        }
+    });
+
+    // Fermer le menu en faisant défiler la page
+    window.addEventListener('scroll', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+
+            // Réinitialiser les animations des liens
+            navLinksLi.forEach((link) => {
+                link.style.animation = '';
+            });
+
+            // Réinitialiser l'animation du burger
+            burger.classList.remove('toggle');
+        }
     });
 });
 
-/* Ajoutez cette animation dans votre CSS */
-
-// Wait until the DOM is fully loaded before running the script
+// --- Fonctionnalité du Carousel ---
 document.addEventListener('DOMContentLoaded', function () {
     // Get all elements with the class 'carousel_slide' (these are the slides)
     const slides = document.querySelectorAll('.carousel_slide');
@@ -77,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
     showSlide(currentIndex);
 });
 
-// Initialiser l'index actuel des blockquotes
-let currentIndex = 1;
+// --- Fonctionnalité des Blockquotes ---
+let currentQuoteIndex = 1;
 const totalQuotes = 5;
 
 // Fonction pour passer au blockquote suivant par index
@@ -101,48 +150,11 @@ function scrollToNext(nextIndex) {
     // Ajouter la classe 'active' au blockquote suivant
     if (nextBlockquote) {
         nextBlockquote.classList.add('active');
-        currentIndex = nextIndex; // Mettre à jour l'index actuel
+        currentQuoteIndex = nextIndex; // Mettre à jour l'index actuel
     }
 }
 
-// Optionnel : Fonction pour naviguer automatiquement (si souhaité)
-// function autoScroll() {
-//     let nextIndex = currentIndex + 1;
-//     if (nextIndex > totalQuotes) {
-//         nextIndex = 1;
-//     }
-//     scrollToNext(nextIndex);
-// }
-
-// setInterval(autoScroll, 10000); // Passer au blockquote suivant toutes les 10 secondes
-
-// Ajouter des écouteurs d'événements aux boutons de scroll (si les boutons n'ont pas d'onclick dans HTML)
-// document.querySelectorAll('.scroll-btn').forEach(button => {
-//     button.addEventListener('click', () => {
-//         const nextIndex = parseInt(button.getAttribute('data-next'), 10);
-//         scrollToNext(nextIndex);
-//     });
-// });
-
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the background audio element by its ID
-    var audio = document.getElementById('background-audio');
-
-    // Attempt to play the audio automatically
-    audio.play().catch(function(error) {
-        console.log('Autoplay blocked. Waiting for user interaction.');
-        
-        // If autoplay is blocked, add a click event listener to play the audio on user interaction
-        document.body.addEventListener('click', function() {
-            audio.play().catch(function(error) {
-                console.log('Playback error:', error);
-            });
-        });
-    });
-});
-
-// Wait for the DOM content to load
+// --- Fonctionnalité Barre de Progression Holo ---
 document.addEventListener('DOMContentLoaded', () => {
     // Get the loading bar element by its ID
     const loadingBar = document.getElementById('holo-loading-bar');
