@@ -21,6 +21,7 @@
 
 /* Styles du Corps */
 body {
+<<<<<<< HEAD
     font-family: var(--font-family);
     color: var(--color-text);
     background-color: var(--color-background);
@@ -28,13 +29,35 @@ body {
 }
 
 /* Barre d'Annonce */
+=======
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    line-height: 1.6;
+}
+
+/* Styles for the site header */
+header {
+    background-color: #111111;
+    padding: 20px 0;
+    border-bottom: 2px solid #c8102e;
+    position: relative;
+}
+
+/* Styles for the announcement bar */
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 .announcement-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     background-color: var(--color-background);
     color: var(--color-primary);
+=======
+    background-color: #000000;
+    color: #c8102e;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     padding: 10px 0;
     text-align: center;
     font-weight: bold;
@@ -56,6 +79,7 @@ body {
     display: inline-block;
     white-space: nowrap;
     animation: slide 10s linear infinite;
+<<<<<<< HEAD
 }
 
 /* En-tête */
@@ -63,6 +87,20 @@ header {
     background-color: var(--color-dark);
     padding: 20px 0;
     border-bottom: 2px solid var(--color-primary);
+=======
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Styles for the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 20px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     position: relative;
     z-index: 1000;
 }
@@ -81,6 +119,7 @@ header {
 .navbar-brand {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
 }
 
 .navbar-brand .logo,
@@ -93,12 +132,29 @@ header {
     margin-right: 20px;
 }
 
+=======
+}
+
+.navbar-brand .logo {
+    height: 60px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+}
+
+.navbar-brand .title {
+    height: 60px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+}
+
+/* Styles for navigation links */
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 .navbar-links {
     list-style: none;
     display: flex;
     gap: 30px;
 }
 
+<<<<<<< HEAD
 .navbar-links li a {
     color: var(--color-text);
     text-decoration: none;
@@ -115,18 +171,50 @@ header {
 .navbar-button {
     background-color: var(--color-primary);
     color: var(--color-text);
+=======
+.navbar-links li {
+    margin: 0;
+}
+
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar-links a:hover {
+    color: #c8102e;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1);
+}
+
+/* Styles for the purchase button */
+.navbar-button {
+    background-color: #c8102e;
+    color: #ffffff;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     border: none;
     padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+<<<<<<< HEAD
     text-decoration: none;
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+=======
+    transition: background-color 0.3s, box-shadow 0.3s;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
 }
 
 .navbar-button:hover {
+<<<<<<< HEAD
     background-color: var(--color-secondary);
+=======
+    background-color: #a00d24;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     box-shadow: 0 0 15px rgba(255, 0, 0, 1);
 }
 
@@ -141,19 +229,30 @@ header {
 /* Séparateur Horizontal */
 .separator {
     border: none;
+<<<<<<< HEAD
     background-color: var(--color-primary);
+=======
+    background-color: #c8102e;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     width: 100%;
 }
 
 /* Contenu Principal */
 main {
     padding: 20px;
+<<<<<<< HEAD
     max-width: 1200px;
     margin: 0 auto;
+=======
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 /* Section À Propos */
 #about {
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     text-align: center;
     margin-bottom: 20px;
 }
@@ -161,6 +260,7 @@ main {
 #about .about-title {
     max-width: 80%;
     height: auto;
+<<<<<<< HEAD
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
     margin: 0 auto 20px auto;
 }
@@ -186,11 +286,44 @@ main {
     height: 300px;
     font-size: 15px;
     margin-top: -80px;
+=======
+    margin-bottom: 25px;
+    margin-top: -20px;
+}
+
+/* Styles for the blockquotes section */
+.dark-tale-section {
+    position: relative;
+}
+
+/* Container for blockquotes */
+.blockquote-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    height: 300px;
+}
+
+/* Container for blockquotes */
+.blockquote-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    height: 300px; 
+    margin-top: -150px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .blockquote-item {
+<<<<<<< HEAD
     background-color: var(--color-light);
     border-left: 6px solid var(--color-primary);
+=======
+    background-color: #222222;
+    border-left: 4px solid #c8102e;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     padding: 20px;
     margin: 0;
     position: absolute;
@@ -198,6 +331,7 @@ main {
     left: 0; /* Assure le positionnement à gauche */
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
     transition: opacity 0.5s ease, transform 0.5s ease;
     opacity: 0;
     transform: translateY(100%);
@@ -206,6 +340,12 @@ main {
     box-shadow: 0 0 10px var(--color-primary);
     border-radius: 5px;
     z-index: 1; /* Assure que les blockquotes sont au même niveau */
+=======
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+    opacity: 0;
+    transform: translateY(100%);
+    font-family: 'Times New Roman', Times, serif;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .blockquote-item.active {
@@ -217,17 +357,29 @@ main {
 .scroll-btn {
     background: none;
     border: none;
+<<<<<<< HEAD
     color: var(--color-primary);
+=======
+    color: #c8102e;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     font-size: 24px;
     cursor: pointer;
     position: absolute;
     bottom: 10px;
     right: 10px;
+<<<<<<< HEAD
     transition: color var(--transition-speed);
 }
 
 .scroll-btn:hover {
     color: var(--color-highlight);
+=======
+    transition: color 0.3s;
+}
+
+.scroll-btn:hover {
+    color: #ff6666;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 /* Animation for Blockquote Transition (Optional) */
@@ -312,14 +464,18 @@ main {
 /* Section Galerie d'Images */
 .image-gallery {
     text-align: center;
+<<<<<<< HEAD
     margin-bottom: 20px;
     margin-top: -50px;
+=======
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .gallery-container {
     display: flex;
     justify-content: center;
     gap: 20px;
+<<<<<<< HEAD
     flex-wrap: wrap;
 }
 
@@ -337,12 +493,34 @@ main {
 
 .image-logo-main {
     transform: rotateY(180deg);
+=======
+}
+
+.image-venom-grum {
+    max-width: 50%;
+    height: auto;
+    transform: rotateY(180deg) rotateX(180deg);
+    display: block;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+.image-logo-main {
+    max-width: 50%;
+    height: auto;
+    transform: rotateY(180deg);
+    display: block;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 /* Séparateur Visuel */
 .visual-separator {
     text-align: center;
     margin: 20px 0;
+<<<<<<< HEAD
+=======
+    margin-top: -65px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .visual-separator img {
@@ -354,20 +532,33 @@ main {
 #roadmap {
     text-align: center;
     margin-bottom: 20px;
+<<<<<<< HEAD
     margin-top: -100px;
+=======
+    margin-top: -150px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 #roadmap .roadmap-title {
     max-width: 80%;
     height: auto;
+<<<<<<< HEAD
     margin: 40px auto 25px auto;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+=======
+    margin-top: 40px;
+    margin-bottom: 25px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 #roadmap .roadmap {
     max-width: 90%;
     height: auto;
+<<<<<<< HEAD
     margin: 0 auto;
+=======
+    margin-top: -20px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 /* Barre de Progression Holo */
@@ -378,23 +569,39 @@ main {
 
 .holo-bar-wrapper {
     width: 80%;
+<<<<<<< HEAD
     background-color: var(--color-light);
+=======
+    background-color: #222;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
     height: 40px;
+<<<<<<< HEAD
     border: 2px solid var(--color-primary);
+=======
+    border: 2px solid #ff3b3b;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .holo-loading-bar {
     height: 100%;
+<<<<<<< HEAD
     background: linear-gradient(to right, var(--color-primary), #550000);
+=======
+    background: linear-gradient(to right, #ff0000, #550000);
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     border-radius: 8px;
     position: absolute;
     left: 0;
     top: 0;
     transition: width 0.5s;
+<<<<<<< HEAD
     box-shadow: 0 0 10px var(--color-primary);
+=======
+    box-shadow: 0 0 10px #ff0000;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .holo-message {
@@ -407,13 +614,22 @@ main {
 #tokenomics {
     text-align: center;
     margin-bottom: 20px;
+<<<<<<< HEAD
+=======
+    margin-top: -50px;
+    width: 100%;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 #tokenomics .tokenomics-title {
     max-width: 90%;
     height: auto;
+<<<<<<< HEAD
     margin: 40px auto;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+=======
+    margin-top: 40px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 #tokenomics .bubble-tokenomics {
@@ -433,6 +649,7 @@ main {
     width: 100%;
     max-width: 800px;
     border-collapse: collapse;
+<<<<<<< HEAD
     background-color: var(--color-light);
     color: #f4f4f4;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
@@ -455,15 +672,72 @@ main {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-right: 2px solid var(--color-primary);
+=======
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    border-radius: 10px; 
+    overflow: hidden;
+    border: 2px solid #c8102e;
+}
+
+/* Style for table headers */
+.tokenomics-table th {
+    background-color: #333;
+    color: #c8102e;
+    padding: 15px;
+    border-bottom: 3px solid #c8102e;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'Arial Black', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Style for table cells */
+.tokenomics-table td {
+    background-color: #222;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+/* Style for even rows */
+.tokenomics-table tbody tr:nth-child(even) {
+    background-color: #333;
+}
+
+/* Style for rows on hover */
+.tokenomics-table tbody tr:hover {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    color: #ff6666;
+}
+
+/* Style for cells on hover */
+.tokenomics-table tbody td:hover {
+    color: #ff6666;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+}
+
+/* Style for the table header cell borders */
+.tokenomics-table th {
+    border-right: 2px solid #c8102e;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .tokenomics-table th:last-child {
     border-right: none;
 }
 
+<<<<<<< HEAD
 .tokenomics-table td {
     background-color: var(--color-light);
     border-bottom: 1px solid #444;
+=======
+/* Style for the last row's bottom border */
+.tokenomics-table tbody tr:last-child td {
+    border-bottom: none;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .tokenomics-table tbody tr:nth-child(even) {
@@ -528,7 +802,11 @@ main {
 }
 
 .carousel_slide img {
+<<<<<<< HEAD
     width: 300px;
+=======
+    width: 250px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     height: auto;
     margin-top: 10px;
 }
@@ -552,8 +830,12 @@ main {
     right: 10px;
 }
 
+<<<<<<< HEAD
 /* Effet Holo pour le Footer */
 .holo-div {
+=======
+.fire-div {
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     bottom: 10px;
     left: 0;
     width: 100%;
@@ -561,12 +843,17 @@ main {
     overflow: hidden;
 }
 
+<<<<<<< HEAD
 .holo {
+=======
+.fire {
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     width: 100%;
     height: auto;
     display: block;
 }
 
+<<<<<<< HEAD
 /* Pied de Page */
 .holo-footer {
     font-family: var(--font-family);
@@ -577,6 +864,19 @@ main {
     box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7);
     color: var(--color-text);
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+=======
+
+/* Footer Styles */
+.satanic-footer {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #111;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #c8102e;
+    position: relative;
+    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7);
+    color: #fff;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 .holo-footer:hover {
@@ -590,8 +890,13 @@ main {
     margin: 0 auto;
 }
 
+<<<<<<< HEAD
 /* Logo du Pied de Page */
 .footer-container .logo img {
+=======
+/* Footer Logo */
+.logo img {
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     width: 100px;
     height: auto;
     filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
@@ -612,10 +917,17 @@ main {
 
 .social-links a {
     text-decoration: none;
+<<<<<<< HEAD
     color: var(--color-secondary);
     font-size: 24px;
     font-weight: bold;
     transition: color var(--transition-speed), transform var(--transition-speed);
+=======
+    color: #c8102e;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     position: relative;
     display: inline-block;
 }
@@ -632,11 +944,19 @@ main {
     transform: translate(-50%, -50%);
     z-index: -1;
     opacity: 0;
+<<<<<<< HEAD
     transition: opacity var(--transition-speed);
 }
 
 .social-links a:hover {
     color: var(--color-highlight);
+=======
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff6666;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     transform: scale(1.2);
 }
 
@@ -654,6 +974,21 @@ main {
 .copyright p {
     margin: 0;
     font-weight: bold;
+<<<<<<< HEAD
+=======
+    color: #ff3333;
+}
+
+.copyright .warning {
+     font-size: 11px;
+    font-weight: normal;
+}
+
+/* Footer Hover Effect */
+.satanic-footer:hover {
+    background-color: #222;
+    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8);
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
 }
 
 /* Styles du Wrapper Inferno */
@@ -704,6 +1039,7 @@ main {
     margin: 20px 0;
 }
 
+<<<<<<< HEAD
 .holo-item {
     margin-bottom: 10px;
     color: var(--color-secondary);
@@ -713,6 +1049,10 @@ main {
 
 .holo-item::before {
     content: "𖤐";
+=======
+.hell-item::before {
+    content: "⛧";
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     margin-right: 10px;
     color: darkred;
     font-size: 24px;
@@ -812,13 +1152,21 @@ main {
     }
 
     .navbar-brand .logo {
+<<<<<<< HEAD
         margin-right: 0;
         margin-bottom: 10px;
+=======
+        margin-left: 25px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
         width: 50px;
         height: 50px;
     }
 
     .navbar-brand .title {
+<<<<<<< HEAD
+=======
+        margin-bottom: 10px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
         width: 150px;
         height: 100px;
         margin-bottom: 10px;
@@ -829,6 +1177,7 @@ main {
         align-items: center;
         margin-top: -15px;
         gap: 10px;
+<<<<<<< HEAD
         width: 100%;
     }
 
@@ -847,6 +1196,16 @@ main {
 
     .navbar-button {
         display: none;
+=======
+    }
+
+    .navbar-links li {
+        margin: 0;
+    }
+
+    .navbar-button {
+        margin-top: 15px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     }
 
     .separator {
@@ -874,8 +1233,42 @@ main {
     }
 
     #carousel {
+<<<<<<< HEAD
         width: 90%;
         max-width: 700px;
+=======
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        margin-top: -50px;
+    }
+    
+    .carousel_slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel_slide p {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .carousel_slide img {
+        width: 250px;
+        height: auto;
+        margin-top: 10px;
+    }    
+    
+    #l {
+        margin-left: -10px;
+        margin-top: 10px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
     }
 
     .carousel_slide img {
@@ -884,7 +1277,20 @@ main {
 
     #l,
     #r {
+<<<<<<< HEAD
         width: 25px;
+=======
+        margin-right: -10px;
+        margin-top: 10px;
+>>>>>>> 1f8899aac8b62e87c2c70aab24e69182003b9b00
+    }
+
+        .custom-link {
+        color: rgb(216, 19, 58);
+    }
+
+    .custom-link:hover {
+        color: rgb(255, 0, 51);
     }
 }
 
