@@ -1,3 +1,4 @@
+/* Variables CSS */
 :root {
     --color-primary: #e40e32;
     --color-secondary: #c8102e;
@@ -10,6 +11,7 @@
     --transition-speed: 0.3s;
 }
 
+/* Reset et styles globaux */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +27,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Barre d'annonce */
 .announcement-bar {
     position: fixed;
     top: 0;
@@ -55,6 +58,7 @@ body {
     animation: slide 10s linear infinite;
 }
 
+/* Header et Navbar */
 header {
     background-color: var(--color-dark);
     padding: 20px 0;
@@ -149,6 +153,7 @@ header {
     color: var(--color-secondary);
 }
 
+/* Animations */
 @keyframes navLinkFade {
     from {
         opacity: 0;
@@ -160,18 +165,41 @@ header {
     }
 }
 
+@keyframes blockquoteFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flicker {
+    0%, 19%, 23%, 25%, 50%, 55%, 100% {
+        opacity: 1;
+    }
+    21%, 24%, 54% {
+        opacity: 0.3;
+    }
+}
+
+/* Separator */
 .separator {
     border: none;
     background-color: var(--color-primary);
     width: 100%;
 }
 
+/* Main Content */
 main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Section About */
 #about {
     text-align: center;
     margin-bottom: 20px;
@@ -200,6 +228,7 @@ main {
     transform: rotateY(180deg);
 }
 
+/* Blockquotes */
 .blockquote-wrapper {
     position: relative;
     max-width: 800px;
@@ -237,6 +266,7 @@ main {
     animation: blockquoteFadeIn 0.5s ease-in-out;
 }
 
+/* Scroll Button */
 .scroll-btn {
     background: none;
     border: none;
@@ -253,17 +283,7 @@ main {
     color: var(--color-highlight);
 }
 
-@keyframes blockquoteFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Image Gallery */
 .image-gallery {
     text-align: center;
     margin-bottom: 20px;
@@ -286,6 +306,7 @@ main {
     margin: 0 auto;
 }
 
+/* Roadmap */
 #roadmap {
     text-align: center;
     margin-bottom: 20px;
@@ -306,6 +327,7 @@ main {
     margin: 0 auto;
 }
 
+/* Barre de Progression Holo */
 .holo-container {
     margin-top: 50px;
     text-align: center;
@@ -338,6 +360,7 @@ main {
     margin-top: 20px;
 }
 
+/* Tokenomics */
 #tokenomics {
     text-align: center;
     margin-bottom: 20px;
@@ -418,6 +441,7 @@ main {
     border-bottom: none;
 }
 
+/* Community */
 #community {
     display: flex;
     flex-direction: column;
@@ -435,6 +459,7 @@ main {
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
+/* Carousel */
 #carousel {
     position: relative;
     width: 80%;
@@ -483,6 +508,7 @@ main {
     right: 10px;
 }
 
+/* Holo Sections */
 .holo-div {
     bottom: 10px;
     left: 0;
@@ -497,6 +523,91 @@ main {
     display: block;
 }
 
+.holo-title {
+    color: var(--color-primary);
+    font-size: 55px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    text-shadow: 5px 5px 15px black;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+    animation: flicker 4s infinite;
+    margin-bottom: 20px;
+}
+
+.holo-subtitle {
+    color: var(--color-secondary);
+    font-size: 45px;
+    text-shadow: 3px 3px 15px var(--color-primary);
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-primary);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+    padding-bottom: 10px;
+}
+
+.holo-paragraph {
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--color-secondary);
+    text-shadow: 3px 3px 10px black;
+    margin-bottom: 20px;
+}
+
+.holo-list {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.holo-item {
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+    font-size: 18px;
+    text-shadow: 2px 2px 8px black;
+}
+
+.holo-item::before {
+    content: "🔺";
+    margin-right: 10px;
+    color: darkred;
+    font-size: 24px;
+}
+
+.holo-quote {
+    background-color: #2e2e2e;
+    color: var(--color-secondary);
+    padding: 20px;
+    border-left: 6px solid var(--color-primary);
+    font-style: italic;
+    text-shadow: 2px 2px 8px var(--color-primary);
+    box-shadow: 0 0 20px var(--color-secondary);
+    margin: 20px 0;
+}
+
+.holo-conclusion {
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    font-size: 35px;
+    text-shadow: 4px 4px 10px var(--color-primary);
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Warning */
+.warning {
+    font-size: 11px;
+}
+
+/* Custom Link */
+.custom-link {
+    color: rgb(216, 19, 58);
+}
+
+.custom-link:hover {
+    color: rgb(255, 0, 51);
+}
+
+/* Footer */
 .holo-footer {
     font-family: var(--font-family);
     background-color: var(--color-dark);
@@ -582,6 +693,7 @@ main {
     color: var(--color-text);
 }
 
+/* Inferno Wrapper */
 .inferno-wrapper {
     padding: 30px;
     margin: 20px auto;
@@ -592,113 +704,9 @@ main {
     max-width: 1200px;
 }
 
-.holo-title {
-    color: var(--color-primary);
-    font-size: 55px;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 5px;
-    text-shadow: 5px 5px 15px black;
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
-    animation: flicker 4s infinite;
-    margin-bottom: 20px;
-}
+/* Responsive Styles */
 
-.holo-subtitle {
-    color: var(--color-secondary);
-    font-size: 45px;
-    text-shadow: 3px 3px 15px var(--color-primary);
-    margin-bottom: 20px;
-    border-bottom: 3px solid var(--color-primary);
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
-    padding-bottom: 10px;
-}
-
-.holo-paragraph {
-    font-size: 20px;
-    line-height: 1.8;
-    color: var(--color-secondary);
-    text-shadow: 3px 3px 10px black;
-    margin-bottom: 20px;
-}
-
-.holo-list {
-    list-style-type: none;
-    padding-left: 20px;
-    margin: 20px 0;
-}
-
-.holo-item {
-    margin-bottom: 10px;
-    color: var(--color-secondary);
-    font-size: 18px;
-    text-shadow: 2px 2px 8px black;
-}
-
-.holo-item::before {
-    content: "𖤐";
-    margin-right: 10px;
-    color: darkred;
-    font-size: 24px;
-}
-
-.holo-quote {
-    background-color: #2e2e2e;
-    color: var(--color-secondary);
-    padding: 20px;
-    border-left: 6px solid var(--color-primary);
-    font-style: italic;
-    text-shadow: 2px 2px 8px var(--color-primary);
-    box-shadow: 0 0 20px var(--color-secondary);
-    margin: 20px 0;
-}
-
-.holo-conclusion {
-    color: var(--color-secondary);
-    text-transform: uppercase;
-    font-size: 35px;
-    text-shadow: 4px 4px 10px var(--color-primary);
-    margin-top: 30px;
-    text-align: center;
-}
-
-.warning {
-    font-size: 11px;
-}
-
-.custom-link {
-    color: rgb(216, 19, 58);
-}
-
-.custom-link:hover {
-    color: rgb(255, 0, 51);
-}
-
-@keyframes flicker {
-    0%, 19%, 23%, 25%, 50%, 55%, 100% {
-        opacity: 1;
-    }
-    21%, 24%, 54% {
-        opacity: 0.3;
-    }
-}
-
-.scroll-btn {
-    background: none;
-    border: none;
-    color: var(--color-primary);
-    font-size: 24px;
-    cursor: pointer;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    transition: color var(--transition-speed);
-}
-
-.scroll-btn:hover {
-    color: var(--color-highlight);
-}
-
+/* Media Queries pour les écrans moyens (max-width: 1200px) */
 @media (max-width: 1200px) {
     .holo-title {
         font-size: 45px;
@@ -728,6 +736,7 @@ main {
         max-width: 100%;
     }
 
+    /* Ajustements pour .custom-link */
     .custom-link {
         color: rgb(216, 19, 58);
     }
@@ -737,6 +746,7 @@ main {
     }
 }
 
+/* Media Queries pour les écrans moyens-petits (max-width: 992px) */
 @media (max-width: 992px) {
     .navbar {
         flex-direction: column;
@@ -787,10 +797,6 @@ main {
         margin-top: 25px;
     }
 
-    .navbar-links .close-menu {
-        display: none;
-    }
-
     .separator {
         margin-top: 25px;
     }
@@ -833,35 +839,7 @@ main {
     }
 }
 
-@media (min-width: 769px) {
-    .burger {
-        display: none;
-    }
-
-    .navbar-links {
-        position: static;
-        height: auto;
-        background-color: transparent;
-        flex-direction: row;
-        align-items: center;
-        width: auto;
-        transform: translateX(0);
-        z-index: 1;
-    }
-
-    .navbar-links::before {
-        content: none;
-    }
-
-    .navbar-button {
-        display: inline-block;
-    }
-
-    .navbar-links .close-menu {
-        display: none;
-    }
-}
-
+/* Media Queries pour les écrans petits (max-width: 768px) */
 @media (max-width: 768px) {
     .burger {
         display: block;
@@ -954,6 +932,7 @@ main {
     }
 }
 
+/* Media Queries pour les écrans très petits (max-width: 576px) */
 @media (max-width: 576px) {
     .holo-title {
         font-size: 35px;
@@ -987,5 +966,35 @@ main {
     .tokenomics-table td {
         padding: 10px;
         font-size: 14px;
+    }
+}
+
+/* Media Queries spécifiques (min-width: 769px) */
+@media (min-width: 769px) {
+    .burger {
+        display: none;
+    }
+
+    .navbar-links {
+        position: static;
+        height: auto;
+        background-color: transparent;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    .navbar-links::before {
+        content: none;
+    }
+
+    .navbar-button {
+        display: inline-block;
+    }
+
+    .navbar-links .close-menu {
+        display: none;
     }
 }
