@@ -1,3 +1,30 @@
+// Burger
+
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.navbar-links');
+    const navLinksLi = document.querySelectorAll('.navbar-links li');
+
+    // Fonction pour activer/désactiver le menu
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+
+        // Animer les liens de navigation
+        navLinksLi.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        // Animation de l'icône burger
+        burger.classList.toggle('toggle');
+    });
+});
+
+/* Ajoutez cette animation dans votre CSS */
+
 // Wait until the DOM is fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function () {
     // Get all elements with the class 'carousel_slide' (these are the slides)
@@ -50,28 +77,52 @@ document.addEventListener('DOMContentLoaded', function () {
     showSlide(currentIndex);
 });
 
-// Initialize the current index for blockquote
+// Initialiser l'index actuel des blockquotes
 let currentIndex = 1;
+const totalQuotes = 5;
 
-// Function to switch to the next blockquote by index
+// Fonction pour passer au blockquote suivant par index
 function scrollToNext(nextIndex) {
-    // Get the currently active blockquote element
-    const currentBlockquote = document.querySelector('.blockquote-item.active');
-    
-    // Get the next blockquote element by its ID
-    const nextBlockquote = document.getElementById(`quote${nextIndex}`);
-    
-    // Remove the 'active' class from the current blockquote if it exists
-    if (currentBlockquote) {
-        currentBlockquote.classList.remove('active');
+    if (nextIndex < 1 || nextIndex > totalQuotes) {
+        return;
     }
-    
-    // Add the 'active' class to the next blockquote if it exists
+
+    // Sélectionner tous les blockquotes
+    const allBlockquotes = document.querySelectorAll('.blockquote-item');
+
+    // Supprimer la classe 'active' de tous les blockquotes
+    allBlockquotes.forEach(blockquote => {
+        blockquote.classList.remove('active');
+    });
+
+    // Sélectionner le blockquote suivant par ID
+    const nextBlockquote = document.getElementById(`quote${nextIndex}`);
+
+    // Ajouter la classe 'active' au blockquote suivant
     if (nextBlockquote) {
         nextBlockquote.classList.add('active');
-        currentIndex = nextIndex; // Update the current index
+        currentIndex = nextIndex; // Mettre à jour l'index actuel
     }
 }
+
+// Optionnel : Fonction pour naviguer automatiquement (si souhaité)
+// function autoScroll() {
+//     let nextIndex = currentIndex + 1;
+//     if (nextIndex > totalQuotes) {
+//         nextIndex = 1;
+//     }
+//     scrollToNext(nextIndex);
+// }
+
+// setInterval(autoScroll, 10000); // Passer au blockquote suivant toutes les 10 secondes
+
+// Ajouter des écouteurs d'événements aux boutons de scroll (si les boutons n'ont pas d'onclick dans HTML)
+// document.querySelectorAll('.scroll-btn').forEach(button => {
+//     button.addEventListener('click', () => {
+//         const nextIndex = parseInt(button.getAttribute('data-next'), 10);
+//         scrollToNext(nextIndex);
+//     });
+// });
 
 // Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -94,10 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Wait for the DOM content to load
 document.addEventListener('DOMContentLoaded', () => {
     // Get the loading bar element by its ID
-    const loadingBar = document.getElementById('satanic-loading-bar');
+    const loadingBar = document.getElementById('holo-loading-bar');
     
     // Get the percentage display element by its ID
-    const percentageDisplay = document.getElementById('satanic-percentage');
+    const percentageDisplay = document.getElementById('holo-percentage');
 
     // Function to calculate the number of days since the given start date
     function getDaysElapsed(startDate) {

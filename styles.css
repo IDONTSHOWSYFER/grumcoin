@@ -1,44 +1,48 @@
-/* Reset margins and borders for all elements */
+/* Variables de Couleurs */
+:root {
+    --color-primary: #e40e32;
+    --color-secondary: #c8102e;
+    --color-background: #000000;
+    --color-text: #ffffff;
+    --color-dark: #111111;
+    --color-light: #222222;
+    --color-highlight: #ff6666;
+    --font-family: 'VT323', monospace;
+    --transition-speed: 0.3s;
+}
+
+/* Réinitialisation des Styles */
 * {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    box-sizing: border-box; /* Include borders and padding in element's total width and height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-/* Styles for the body of the document */
+/* Styles du Corps */
 body {
-    font-family: 'Arial', sans-serif; /* General text font */
-    color: #ffffff; /* White text color */
-    background-color: #000000; /* Black background color */
-    line-height: 1.6; /* Line height for readability */
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
 }
 
-/* Styles for the site header */
-header {
-    background-color: #111111; /* Very dark black background for a moody feel */
-    padding: 20px 0; /* Increased vertical spacing for prominence */
-    border-bottom: 2px solid #c8102e; /* Blood-red bottom border for emphasis */
-    position: relative;
-}
-
-/* Styles for the announcement bar */
+/* Barre d'Annonce */
 .announcement-bar {
-    position: fixed; /* Fixe la barre en haut de la page */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Largeur totale de la page */
-    background-color: #000000; /* Fond noir pour le thème infernal */
-    color: #c8102e; /* Couleur du texte en rouge sang */
-    padding: 10px 0; /* Espacement vertical */
-    text-align: center; /* Centre le texte */
-    font-weight: bold; /* Met le texte en gras */
-    font-size: 16px; /* Taille de police pour le texte */
-    z-index: 9999; /* Assure que la barre est au-dessus des autres éléments */
-    overflow: hidden; /* Cache le texte qui dépasse les limites de la barre */
+    width: 100%;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 9999;
+    overflow: hidden;
 }
 
-/* Animation pour faire bouger la barre d'annonce de gauche à droite */
 @keyframes slide {
     0% {
         transform: translateX(100%);
@@ -49,377 +53,457 @@ header {
 }
 
 .announcement-text {
-    display: inline-block; /* Permet à l'élément de se déplacer horizontalement */
-    white-space: nowrap; /* Évite que le texte se coupe */
-    animation: slide 10s linear infinite; /* Anime le texte pour qu'il défile */
-    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    white-space: nowrap;
+    animation: slide 10s linear infinite;
 }
 
-/* Styles for the navigation bar */
-.navbar {
-    display: flex; /* Use Flexbox for layout */
-    justify-content: space-between; /* Equal spacing between items */
-    align-items: center; /* Vertically center items */
-    max-width: 1200px; /* Maximum width of the navigation bar */
-    margin: 0 auto; /* Center the navigation bar horizontally */
-    margin-top: 50px;
-    padding: 0 20px; /* Horizontal padding */
+/* En-tête */
+header {
+    background-color: var(--color-dark);
+    padding: 20px 0;
+    border-bottom: 2px solid var(--color-primary);
     position: relative;
+    z-index: 1000;
 }
 
-/* Styles for the brand in the navigation bar */
+/* Barre de Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
 .navbar-brand {
-    display: flex; /* Use Flexbox to align logo and title */
-    align-items: center; /* Vertically center items */
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .logo,
+.navbar-brand .title {
+    height: 60px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
 .navbar-brand .logo {
-    height: 60px; /* Increased logo image height for impact */
-    margin-right: 20px; /* Spacing to the right of the logo */
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Red shadow for a glowing effect */
+    margin-right: 20px;
 }
 
-.navbar-brand .title {
-    height: 60px; /* Increased height for the title */
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* Red shadow for the title */
-}
-
-/* Styles for navigation links */
 .navbar-links {
-    list-style: none; /* Remove list bullets */
-    display: flex; /* Use Flexbox for link layout */
-    gap: 30px; /* Spacing between links */
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
-.navbar-links li {
-    margin: 0; /* Remove default margin from list items */
+.navbar-links li a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
 }
 
-.navbar-links a {
-    color: #ffffff; /* White link text color */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: bold; /* Bold text */
-    transition: color 0.3s, text-shadow 0.3s; /* Transition for color and shadow changes */
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Red shadow for link text */
-    font-family: 'Times New Roman', Times, serif;
+.navbar-links li a:hover {
+    color: var(--color-secondary);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1);
 }
 
-.navbar-links a:hover {
-    color: #c8102e; /* Blood-red link color on hover */
-    text-shadow: 0 0 10px rgba(255, 0, 0, 1); /* More intense red shadow on hover */
-}
-
-/* Styles for the purchase button */
 .navbar-button {
-    background-color: #c8102e; /* Blood-red background color for the button */
-    color: #ffffff; /* White text color for the button */
-    border: none; /* Remove default borders */
-    padding: 12px 25px; /* Internal padding for the button */
-    border-radius: 5px; /* Rounded corners for the button */
-    cursor: pointer; /* Change cursor to indicate it's clickable */
-    font-weight: bold; /* Bold text */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transition for background color and shadow changes */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Red shadow around the button */
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
 }
 
 .navbar-button:hover {
-    background-color: #a00d24; /* Darker blood-red background color on hover */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* More intense red shadow on hover */
+    background-color: var(--color-secondary);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1);
 }
 
-/* Styles for the separator line under the navigation bar */
+/* Menu Burger */
+.burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--color-text);
+}
+
+/* Séparateur Horizontal */
 .separator {
-    border: none; /* Remove default borders */
-    background-color: #c8102e; /* Blood-red background color for the separator line */
-    width: 100%; /* Full width of the separator line */
+    border: none;
+    background-color: var(--color-primary);
+    width: 100%;
 }
 
-/* Styles for the main section */
+/* Contenu Principal */
 main {
-    padding: 20px; /* Internal padding around the main content */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Styles for the about section */
+/* Section À Propos */
 #about {
-    position: relative;
-    text-align: center; /* Center text and images in the section */
-    margin-bottom: 20px; /* Bottom spacing around the section */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #about .about-title {
-    max-width: 80%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    margin-bottom: 25px;
+    max-width: 80%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+    margin: 0 auto 20px auto;
+}
+
+.gif-wrapper {
+    margin: 0 auto 50px auto;
+    margin-top: -100px;
+}
+
+.trx-grum {
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
     margin-top: -20px;
 }
 
-/* Styles for the blockquotes section */
-.dark-tale-section {
-    position: relative;
-}
-
-/* Container for blockquotes */
-.blockquote-container {
-    position: relative;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden; /* Hide non-visible blockquotes */
-    height: 300px; /* Fixed height for scrolling */
-}
-
-/* Container for blockquotes */
+/* Blockquote Carousel Styles */
 .blockquote-wrapper {
     position: relative;
     max-width: 800px;
-    margin: auto;
-    overflow: hidden; /* Hide non-visible blockquotes */
-    height: 300px; /* Fixed height for scrolling */
-    margin-top: -150px;
+    margin: 50px auto;
+    overflow: hidden;
+    height: 300px;
+    font-size: 15px;
+    margin-top: -80px;
 }
 
-/* Styles for blockquotes */
 .blockquote-item {
-    background-color: #222222; /* Dark background color */
-    border-left: 4px solid #c8102e; /* Blood-red left border */
+    background-color: var(--color-light);
+    border-left: 6px solid var(--color-primary);
     padding: 20px;
     margin: 0;
-    font-style: italic;
     position: absolute;
+    top: 0; /* Assure le positionnement en haut */
+    left: 0; /* Assure le positionnement à gauche */
     width: 100%;
     height: 100%;
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
-    opacity: 0; /* Default hidden state */
-    transform: translateY(100%); /* Position blockquotes out of view */
-    font-family: 'Times New Roman', Times, serif;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(100%);
+    font-family: var(--font-family);
+    color: var(--color-secondary);
+    box-shadow: 0 0 10px var(--color-primary);
+    border-radius: 5px;
+    z-index: 1; /* Assure que les blockquotes sont au même niveau */
 }
 
-/* Styles for the active blockquote */
 .blockquote-item.active {
     opacity: 1;
     transform: translateY(0);
+    z-index: 2; /* Assure que le blockquote actif est au-dessus */
 }
 
-/* Styles for the scroll button */
 .scroll-btn {
     background: none;
     border: none;
-    color: #c8102e; /* Blood-red color for the button */
+    color: var(--color-primary);
     font-size: 24px;
     cursor: pointer;
     position: absolute;
     bottom: 10px;
     right: 10px;
-    transition: color 0.3s; /* Transition for color change */
+    transition: color var(--transition-speed);
 }
 
 .scroll-btn:hover {
-    color: #ff6666; /* Lighter red color on hover */
+    color: var(--color-highlight);
 }
 
-/* Styles for the image gallery */
+/* Animation for Blockquote Transition (Optional) */
+@keyframes blockquoteFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blockquote-item.active {
+    animation: blockquoteFadeIn 0.5s ease-in-out;
+}
+
+/* Responsiveness for Blockquote Carousel */
+@media (max-width: 1200px) {
+    .blockquote-wrapper {
+        max-width: 90%;
+        height: 200px;
+    }
+
+    .blockquote-item {
+        padding: 15px;
+        height: 100%;
+    }
+
+    .scroll-btn {
+        font-size: 20px;
+        bottom: 5px;
+        right: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blockquote-wrapper {
+        max-width: 95%;
+        height: 150px; /* Ajustez la hauteur si nécessaire */
+        font-size: 13px;
+    }
+
+    /* Maintenir le positionnement absolu et les styles pour le carousel */
+    .blockquote-item {
+        position: absolute; /* Garder absolu pour empiler */
+        transform: translateY(100%);
+        opacity: 0;
+        margin-bottom: 0; /* Supprimer le margin */
+    }
+
+    .blockquote-item.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .scroll-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .blockquote-wrapper {
+        padding: 10px;
+    }
+
+    .blockquote-item {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .scroll-btn {
+        font-size: 18px;
+        bottom: 5px;
+        right: 5px;
+    }
+}
+
+/* Section Galerie d'Images */
 .image-gallery {
-    text-align: center; /* Center images in the gallery */
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -50px;
 }
 
 .gallery-container {
-    display: flex; /* Use Flexbox to align images */
-    justify-content: center; /* Center images horizontally */
-    gap: 20px; /* Spacing between images */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.image-venom-grum {
-    max-width: 50%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    transform: rotateY(180deg) rotateX(180deg); /* Flip image both vertically and horizontally */
-    display: block; /* Display image as block for centering */
-    margin-top: -20px;
-    margin-left: -20px;
+.grumcointrx {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    opacity: 0.33;
+}
+
+.grumcointrx {
+    transform: rotateX(180deg);
+    margin: 0 auto;
 }
 
 .image-logo-main {
-    max-width: 50%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
     transform: rotateY(180deg);
-    display: block; /* Display image as block for centering */
 }
 
-/* Styles for the visual separator */
+/* Séparateur Visuel */
 .visual-separator {
-    text-align: center; /* Center the visual separator image */
-    margin: 20px 0; /* Vertical spacing around the visual separator */
-    margin-top: -65px;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .visual-separator img {
-    max-width: 100%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Styles for the roadmap section */
+/* Section Roadmap */
 #roadmap {
-    text-align: center; /* Center text and images in the section */
-    margin-bottom: 20px; /* Bottom spacing around the section */
-    margin-top: -150px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -100px;
 }
 
 #roadmap .roadmap-title {
-    max-width: 80%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    margin-top: 40px;
-    margin-bottom: 25px;
+    max-width: 80%;
+    height: auto;
+    margin: 40px auto 25px auto;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
 #roadmap .roadmap {
-    max-width: 90%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    margin-top: -20px; /* Adjust spacing as needed */
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
 }
 
-.satanic-container {
+/* Barre de Progression Holo */
+.holo-container {
     margin-top: 50px;
+    text-align: center;
 }
 
-.satanic-bar-wrapper {
+.holo-bar-wrapper {
     width: 80%;
-    background-color: #222; /* Couleur de fond sombre pour la barre */
+    background-color: var(--color-light);
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
     height: 40px;
-    border: 2px solid #ff3b3b; /* Bordure rouge ardente */
+    border: 2px solid var(--color-primary);
 }
 
-.satanic-loading-bar {
+.holo-loading-bar {
     height: 100%;
-    background: linear-gradient(to right, #ff0000, #550000); /* Gradient avec rouge sombre */
+    background: linear-gradient(to right, var(--color-primary), #550000);
     border-radius: 8px;
     position: absolute;
     left: 0;
     top: 0;
     transition: width 0.5s;
-    box-shadow: 0 0 10px #ff0000; /* Effet de lueur rouge */
+    box-shadow: 0 0 10px var(--color-primary);
 }
 
-.satanic-message {
-    font-size: 20px;
-    color: #ff3b3b;
+.holo-message {
+    font-size: 13px;
+    color: var(--color-primary);
     margin-top: 20px;
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Styles for the tokenomics section */
+/* Section Tokenomics */
 #tokenomics {
-    text-align: center; /* Center text and images in the section */
-    margin-bottom: 20px; /* Bottom spacing around the section */
-    margin-top: -50px;
-    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #tokenomics .tokenomics-title {
-    max-width: 90%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    margin-top: 40px;
+    max-width: 90%;
+    height: auto;
+    margin: 40px auto;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
 #tokenomics .bubble-tokenomics {
-    width: 90%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
-    margin-top: -40px; /* Adjust spacing as needed */
+    width: 90%;
+    height: auto;
+    margin-top: -40px;
 }
 
-/* Container for the table */
+/* Tableau Tokenomics */
 .tokenomics-table-container {
-    display: flex; /* Flexbox layout to center the table */
-    justify-content: center; /* Center the table horizontally */
-    margin: 30px auto; /* Margin to space the table vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
 }
 
-/* General style for the table */
 .tokenomics-table {
-    width: 100%; /* Full width of the container */
-    max-width: 800px; /* Maximum width to keep the table at a readable size */
-    border-collapse: collapse; /* Collapse borders to create a single border */
-    background-color: #1a1a1a; /* Dark background color for the entire table */
-    color: #f4f4f4; /* Light color for the text for contrast */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Red shadow for a fiery effect */
-    border-radius: 10px; /* Rounded corners for a more eerie look */
-    overflow: hidden; /* Hide any overflow to maintain rounded corners */
-    border: 2px solid #c8102e; /* Red border around the table for a sinister effect */
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: var(--color-light);
+    color: #f4f4f4;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--color-primary);
 }
 
-/* Style for table headers */
-.tokenomics-table th {
-    background-color: #333; /* Dark background for headers */
-    color: #c8102e; /* Blood-red color for header text */
-    padding: 15px; /* Padding inside header cells */
-    border-bottom: 3px solid #c8102e; /* Thick red border below headers for emphasis */
-    text-align: left; /* Align text to the left */
-    text-transform: uppercase; /* Uppercase text for dramatic effect */
-    font-family: 'Arial Black', Arial, sans-serif; /* Bold and imposing font */
-    letter-spacing: 1px; /* Slight spacing between letters for impact */
-}
-
-/* Style for table cells */
+.tokenomics-table th,
 .tokenomics-table td {
-    background-color: #222; /* Dark background for cells */
-    padding: 15px; /* Padding inside cells */
-    border-bottom: 1px solid #444; /* Subtle border between rows */
-    text-align: left; /* Align text to the left */
+    padding: 15px;
+    text-align: left;
+    font-family: var(--font-family);
 }
 
-/* Style for even rows */
-.tokenomics-table tbody tr:nth-child(even) {
-    background-color: #333; /* Slightly lighter background for even rows */
-}
-
-/* Style for rows on hover */
-.tokenomics-table tbody tr:hover {
-    background-color: #444; /* Lighter background color on hover */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* More intense red shadow on hover */
-    color: #ff6666; /* Text color changes to a brighter red on hover */
-}
-
-/* Style for cells on hover */
-.tokenomics-table tbody td:hover {
-    color: #ff6666; /* Text color changes on hover */
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); /* Red glow around text on hover */
-}
-
-/* Style for the table header cell borders */
 .tokenomics-table th {
-    border-right: 2px solid #c8102e; /* Red border on the right of each header cell */
+    background-color: #333;
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-right: 2px solid var(--color-primary);
 }
 
-/* Remove the right border on the last header cell */
 .tokenomics-table th:last-child {
     border-right: none;
 }
 
-/* Style for the last row's bottom border */
-.tokenomics-table tbody tr:last-child td {
-    border-bottom: none; /* Remove bottom border from the last row */
+.tokenomics-table td {
+    background-color: var(--color-light);
+    border-bottom: 1px solid #444;
 }
 
-/* Community Section */
+.tokenomics-table tbody tr:nth-child(even) {
+    background-color: #333;
+}
+
+.tokenomics-table tbody tr:hover {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    color: var(--color-highlight);
+}
+
+.tokenomics-table tbody td:hover {
+    color: var(--color-highlight);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+}
+
+.tokenomics-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Section Communauté */
 #community {
     display: flex;
-    flex-direction: column; /* Arrange elements in a column */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     border-radius: 25px;
-    margin: 50px;
-    margin-top: -25px;
-    margin-bottom: -40px;
+    margin: 50px auto;
+    max-width: 1200px;
 }
 
 #community .community-title img {
-    max-width: 100%; /* Prevent image from exceeding container width */
-    height: auto; /* Maintain image proportions */
+    max-width: 100%;
+    height: auto;
     margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
-/* Carousel Styles */
+/* Carrousel */
 #carousel {
     position: relative;
     width: 80%;
@@ -427,7 +511,7 @@ main {
     overflow: hidden;
     display: flex;
     align-items: center;
-    margin-top: -50px;
+    margin: 0 auto -50px auto;
 }
 
 .carousel_slide {
@@ -438,23 +522,22 @@ main {
 }
 
 .carousel_slide p {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 1.2em;
     margin: 0;
     padding: 20px;
 }
 
 .carousel_slide img {
-    width: 250px; /* Adjust width as necessary */
+    width: 300px;
     height: auto;
     margin-top: 10px;
 }
 
-/* Navigation Buttons for Carousel */
-#l, #r {
+#l,
+#r {
     position: absolute;
     top: 50%;
-    width: 40px;
+    width: 30px;
     height: auto;
     cursor: pointer;
     transform: translateY(-50%);
@@ -469,50 +552,55 @@ main {
     right: 10px;
 }
 
-.fire-div {
-    bottom: 10px; /* Lève l'image de 10px par rapport au bas */
+/* Effet Holo pour le Footer */
+.holo-div {
+    bottom: 10px;
     left: 0;
-    width: 100%; /* Prend toute la largeur de l'écran */
-    z-index: 2; /* Toujours devant le footer */
-    overflow: hidden; /* Empêche le débordement */
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
 }
 
-.fire {
-    width: 100%; /* L'image prend toute la largeur disponible */
-    height: auto; /* Ajuste la hauteur de manière proportionnelle */
-    display: block; /* Assure que l'image se comporte comme un élément de bloc */
+.holo {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-
-/* Footer Styles */
-.satanic-footer {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #111; /* Dark background for consistency */
+/* Pied de Page */
+.holo-footer {
+    font-family: var(--font-family);
+    background-color: var(--color-dark);
     padding: 40px 20px;
     text-align: center;
-    border-top: 2px solid #c8102e; /* Red border */
-    position: relative;
-    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7); /* Red shadow */
-    color: #fff; /* White text for contrast */
+    border-top: 2px solid var(--color-primary);
+    box-shadow: 0 -10px 20px rgba(255, 0, 0, 0.7);
+    color: var(--color-text);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
-/* Footer Container */
+.holo-footer:hover {
+    background-color: #222;
+    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8);
+}
+
+/* Conteneur du Pied de Page */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Footer Logo */
-.logo img {
-    width: 100px; /* Increased size for visibility */
+/* Logo du Pied de Page */
+.footer-container .logo img {
+    width: 100px;
     height: auto;
-    filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); /* White logo with red shadow */
+    filter: invert(100%) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
     margin-bottom: 20px;
 }
 
-/* Social Links */
+/* Liens Sociaux */
 .social-links {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 20px 0;
 }
@@ -524,16 +612,16 @@ main {
 
 .social-links a {
     text-decoration: none;
-    color: #c8102e; /* Red color for icons */
-    font-size: 24px; /* Larger size for impact */
+    color: var(--color-secondary);
+    font-size: 24px;
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transition effects */
+    transition: color var(--transition-speed), transform var(--transition-speed);
     position: relative;
     display: inline-block;
 }
 
 .social-links a::before {
-    content: ''; /* Additional visual effect */
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -542,117 +630,123 @@ main {
     background: radial-gradient(circle, rgba(255, 0, 0, 0.5) 0%, transparent 80%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Positioned behind icon */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
 }
 
 .social-links a:hover {
-    color: #ff6666; /* Brighter color on hover */
-    transform: scale(1.2); /* Zoom effect on hover */
+    color: var(--color-highlight);
+    transform: scale(1.2);
 }
 
 .social-links a:hover::before {
-    opacity: 1; /* Show halo effect on hover */
+    opacity: 1;
 }
 
-/* Copyright Section */
+/* Section de Copyright */
 .copyright {
     margin-top: 20px;
     font-size: 18px;
+    color: var(--color-primary);
 }
 
 .copyright p {
     margin: 0;
     font-weight: bold;
-    color: #ff3333; /* Bright red for copyright text */
 }
 
-/* Footer Hover Effect */
-.satanic-footer:hover {
-    background-color: #222; /* Subtle color change on hover */
-    box-shadow: 0 -15px 30px rgba(255, 0, 0, 0.8); /* More intense shadow on hover */
-}
-
+/* Styles du Wrapper Inferno */
 #inferno-wrapper {
     padding: 30px;
     margin: 20px auto;
-    background-color: #1a1a1a;
-    border: 5px solid red;
+    background-color: var(--color-light);
+    border: 5px solid var(--color-primary);
     border-radius: 13px;
-    box-shadow: 0 0 30px red;
+    box-shadow: 0 0 30px var(--color-primary);
     max-width: 1200px;
-    font-family: 'Times New Roman', Times, serif;
 }
 
-.hell-title {
-    color: red;
+/* Titres et Paragraphes */
+.holo-title {
+    color: var(--color-primary);
     font-size: 55px;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 5px;
     text-shadow: 5px 5px 15px black;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
     animation: flicker 4s infinite;
     margin-bottom: 20px;
 }
 
-.hell-subtitle {
-    color: crimson;
+.holo-subtitle {
+    color: var(--color-secondary);
     font-size: 45px;
-    text-shadow: 3px 3px 15px red;
+    text-shadow: 3px 3px 15px var(--color-primary);
     margin-bottom: 20px;
-    border-bottom: 3px solid red;
+    border-bottom: 3px solid var(--color-primary);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
     padding-bottom: 10px;
 }
 
-.hell-paragraph {
+.holo-paragraph {
     font-size: 20px;
     line-height: 1.8;
-    color: crimson;
+    color: var(--color-secondary);
     text-shadow: 3px 3px 10px black;
     margin-bottom: 20px;
 }
 
-.hell-list {
+.holo-list {
     list-style-type: none;
     padding-left: 20px;
     margin: 20px 0;
 }
 
-.hell-item::before {
-    content: "☠ ";
+.holo-item {
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+    font-size: 18px;
+    text-shadow: 2px 2px 8px black;
+}
+
+.holo-item::before {
+    content: "𖤐";
     margin-right: 10px;
     color: darkred;
     font-size: 24px;
 }
 
-.hell-item {
-    margin-bottom: 10px;
-    color: crimson;
-    font-size: 18px;
-    text-shadow: 2px 2px 8px black;
-}
-
-.hell-quote {
+.holo-quote {
     background-color: #2e2e2e;
-    color: crimson;
+    color: var(--color-secondary);
     padding: 20px;
-    border-left: 6px solid red;
+    border-left: 6px solid var(--color-primary);
     font-style: italic;
-    text-shadow: 2px 2px 8px red;
-    box-shadow: 0 0 20px crimson;
+    text-shadow: 2px 2px 8px var(--color-primary);
+    box-shadow: 0 0 20px var(--color-secondary);
     margin: 20px 0;
 }
 
-.hell-conclusion {
-    color: crimson;
+.holo-conclusion {
+    color: var(--color-secondary);
     text-transform: uppercase;
     font-size: 35px;
-    text-shadow: 4px 4px 10px red;
+    text-shadow: 4px 4px 10px var(--color-primary);
     margin-top: 30px;
     text-align: center;
 }
 
+.warning {
+    font-size: 11px;
+}
+
+.copyright {
+    font-size: 7px;
+}
+
+/* Animation Flicker */
 @keyframes flicker {
     0%, 19%, 23%, 25%, 50%, 55%, 100% {
         opacity: 1;
@@ -662,105 +756,222 @@ main {
     }
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Boutons de Scroll */
+.scroll-btn {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: color var(--transition-speed);
+}
+
+.scroll-btn:hover {
+    color: var(--color-highlight);
+}
+
+/* Responsivité */
+@media (max-width: 1200px) {
+    .holo-title {
+        font-size: 45px;
+    }
+
+    .holo-subtitle {
+        font-size: 35px;
+    }
+
+    .holo-paragraph {
+        font-size: 18px;
+    }
+
+    .holo-conclusion {
+        font-size: 28px;
+    }
+
+    .carousel_slide img {
+        width: 250px;
+    }
+
+    .tokenomics-table {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
     .navbar {
-        flex-direction: column; /* Stack navigation items vertically on smaller screens */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column;
+        align-items: center;
     }
 
     .navbar-brand {
-        flex-direction: column; /* Stack logo and title vertically */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column;
+        align-items: center;
     }
 
     .navbar-brand .logo {
-        margin-left: 25px;
-        width: 50px; /* Smaller logo size */
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 50px;
         height: 50px;
     }
 
     .navbar-brand .title {
-        margin-bottom: 10px; /* Space between logo and title */
-        width: 150px; /* Adjusted width */
+        width: 150px;
         height: 100px;
+        margin-bottom: 10px;
     }
 
     .navbar-links {
-        flex-direction: column; /* Stack links vertically */
-        align-items: center; /* Center links horizontally */
-        margin-top: -15px; /* Space above links */
-        gap: 10px; /* Space between links */
+        flex-direction: column;
+        align-items: center;
+        margin-top: -15px;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar-links.active {
+        transform: translateX(0);
     }
 
     .navbar-links li {
-        margin: 0; /* Remove default list item margin */
+        opacity: 1;
+    }
+
+    .navbar-links li a {
+        font-size: 1.5em;
+        padding: 20px 0;
     }
 
     .navbar-button {
-        margin-top: 15px; /* Space above button */
+        display: none;
     }
 
     .separator {
-        margin-top: 25px; /* Space above separator */
+        margin-top: 25px;
     }
 
     .about-title {
-        margin-top: 75px; /* Space above the title */
+        margin-top: 75px;
     }
-    
+
     .blockquote-wrapper {
-        margin-top: -60px; /* Adjust spacing */
+        margin-top: -60px;
     }
 
     .visual-separator {
-        margin-top: -50px; /* Adjust spacing */
+        margin-top: -50px;
     }
 
     #roadmap .roadmap-title {
-        margin-top: 50px; /* Space above title */
+        margin-top: 50px;
     }
-    
+
     #roadmap .roadmap {
-        margin-top: -60px; /* Adjust spacing */
+        margin-top: -60px;
     }
 
     #carousel {
-        position: relative;
-        width: 80%;
-        max-width: 800px;
-        margin-top: -50px; /* Adjust spacing */
-    }
-    
-    .carousel_slide {
-        display: flex;
-        flex-direction: column; /* Stack text and image vertically */
-        align-items: center; /* Center items horizontally */
-        text-align: center; /* Center text */
-        box-sizing: border-box;
-        transition: transform 0.5s ease-in-out;
-    }
-    
-    .carousel_slide p {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 1.2em;
-        margin: 0;
-        padding: 20px;
-    }
-    
-    .carousel_slide img {
-        width: 250px; /* Adjust width as necessary */
-        height: auto;
-        margin-top: 10px;
-    }    
-    
-    #l {
-        margin-left: -10px; /* Adjust position */
-        margin-top: 10px;
+        width: 90%;
+        max-width: 700px;
     }
 
+    .carousel_slide img {
+        width: 200px;
+    }
+
+    #l,
     #r {
-        margin-right: -10px; /* Adjust position */
-        margin-top: 10px;
+        width: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .navbar-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 60px;
+        background-color: var(--color-dark);
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .navbar-links.active {
+        transform: translateX(0);
+    }
+
+    .navbar-links li {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+    }
+
+    .navbar-links.active li {
+        opacity: 1;
+    }
+
+    .navbar-button {
+        display: none;
+    }
+
+    .carousel_slide img {
+        width: 250px;
+    }
+
+    .social-links li {
+        margin: 0 10px;
+    }
+
+    .custom-link {
+        color: rgb(216, 19, 58);
+    }
+
+    .custom-link:hover {
+        color: rgb(255, 0, 51);
+    }
+}
+
+@media (max-width: 576px) {
+    .holo-title {
+        font-size: 35px;
+    }
+
+    .holo-subtitle {
+        font-size: 25px;
+    }
+
+    .holo-paragraph {
+        font-size: 16px;
+    }
+
+    .holo-conclusion {
+        font-size: 25px;
+    }
+
+    .carousel_slide img {
+        width: 180px;
+    }
+
+    .social-links a {
+        font-size: 20px;
+    }
+
+    .footer-container .logo img {
+        width: 80px;
+    }
+
+    .tokenomics-table th,
+    .tokenomics-table td {
+        padding: 10px;
+        font-size: 14px;
     }
 }
