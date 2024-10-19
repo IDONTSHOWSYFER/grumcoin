@@ -1,7 +1,7 @@
 // script.js
 
-// --- Fonctionnalité du Menu Burger ---
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Fonctionnalité du Menu Burger ---
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.navbar-links');
     const navLinksLi = document.querySelectorAll('.navbar-links li');
@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fermer le menu en cliquant en dehors du menu burger
     document.addEventListener('click', (e) => {
-        // Vérifie si le menu est ouvert et si le clic est en dehors du menu et du burger
         if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !burger.contains(e.target)) {
             navLinks.classList.remove('active');
 
@@ -72,115 +71,84 @@ document.addEventListener('DOMContentLoaded', () => {
             burger.classList.remove('toggle');
         }
     });
-});
 
-// --- Fonctionnalité du Carousel ---
-document.addEventListener('DOMContentLoaded', function () {
-    // Get all elements with the class 'carousel_slide' (these are the slides)
+    // --- Fonctionnalité du Carousel ---
     const slides = document.querySelectorAll('.carousel_slide');
-    
-    // Get the left and right arrow buttons by their ID
     const leftArrow = document.getElementById('l');
     const rightArrow = document.getElementById('r');
-    
-    // Initialize the current index of the slide to 0 (first slide)
     let currentIndex = 0;
 
-    // Function to display the slide at a given index
     function showSlide(index) {
         const totalSlides = slides.length;
-        
-        // Check if the index is greater than the number of slides, if so, reset to 0
+
         if (index >= totalSlides) {
             currentIndex = 0;
-        } 
-        // If the index is less than 0, set it to the last slide
-        else if (index < 0) {
+        } else if (index < 0) {
             currentIndex = totalSlides - 1;
-        } 
-        // Otherwise, update the current index to the passed value
-        else {
+        } else {
             currentIndex = index;
         }
-        
-        // Calculate the offset for slide movement (each slide moves 100% width)
+
         const offset = -currentIndex * 100;
-        
-        // Apply the offset to each slide to create the carousel effect
+
         slides.forEach(slide => {
             slide.style.transform = `translateX(${offset}%)`;
         });
     }
 
-    // Add click event listener to the left arrow to go to the previous slide
-    leftArrow.addEventListener('click', () => {
+    leftArrow.addEventListener('click', (e) => {
+        e.preventDefault();
         showSlide(currentIndex - 1);
     });
 
-    // Add click event listener to the right arrow to go to the next slide
-    rightArrow.addEventListener('click', () => {
+    rightArrow.addEventListener('click', (e) => {
+        e.preventDefault();
         showSlide(currentIndex + 1);
     });
 
-    // Initially show the first slide when the page loads
     showSlide(currentIndex);
-});
 
-// --- Fonctionnalité des Blockquotes ---
-let currentQuoteIndex = 1;
-const totalQuotes = 5;
+    // --- Fonctionnalité des Blockquotes ---
+    let currentQuoteIndex = 1;
+    const totalQuotes = 5;
 
-// Fonction pour passer au blockquote suivant par index
-function scrollToNext(nextIndex) {
-    if (nextIndex < 1 || nextIndex > totalQuotes) {
-        return;
+    // Fonction pour passer au blockquote suivant par index
+    function scrollToNext(nextIndex) {
+        if (nextIndex < 1 || nextIndex > totalQuotes) {
+            return;
+        }
+
+        const allBlockquotes = document.querySelectorAll('.blockquote-item');
+        allBlockquotes.forEach(blockquote => {
+            blockquote.classList.remove('active');
+        });
+
+        const nextBlockquote = document.getElementById(`quote${nextIndex}`);
+        if (nextBlockquote) {
+            nextBlockquote.classList.add('active');
+            currentQuoteIndex = nextIndex;
+        }
     }
 
-    // Sélectionner tous les blockquotes
-    const allBlockquotes = document.querySelectorAll('.blockquote-item');
+    // Attacher la fonction scrollToNext au contexte global
+    window.scrollToNext = scrollToNext;
 
-    // Supprimer la classe 'active' de tous les blockquotes
-    allBlockquotes.forEach(blockquote => {
-        blockquote.classList.remove('active');
-    });
-
-    // Sélectionner le blockquote suivant par ID
-    const nextBlockquote = document.getElementById(`quote${nextIndex}`);
-
-    // Ajouter la classe 'active' au blockquote suivant
-    if (nextBlockquote) {
-        nextBlockquote.classList.add('active');
-        currentQuoteIndex = nextIndex; // Mettre à jour l'index actuel
-    }
-}
-
-// --- Fonctionnalité Barre de Progression Holo ---
-document.addEventListener('DOMContentLoaded', () => {
-    // Get the loading bar element by its ID
+    // --- Fonctionnalité Barre de Progression Holo ---
     const loadingBar = document.getElementById('holo-loading-bar');
-    
-    // Get the percentage display element by its ID
     const percentageDisplay = document.getElementById('holo-percentage');
 
-    // Function to calculate the number of days since the given start date
     function getDaysElapsed(startDate) {
-        const now = new Date(); // Get the current date and time
-        const start = new Date(startDate); // Convert the startDate string into a Date object
-        const diffTime = now - start; // Calculate the time difference in milliseconds
-        const daysElapsed = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+        const now = new Date();
+        const start = new Date(startDate);
+        const diffTime = now - start;
+        const daysElapsed = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         return daysElapsed;
     }
 
-    // Set the start date (you can change this date to your desired value)
-    const startDate = '2024-09-06'; // Example start date: September 6, 2024
-
-    // Calculate the number of days since the start date
+    const startDate = '2024-09-06'; // Date de début (peut être modifiée)
     const daysElapsed = getDaysElapsed(startDate);
+    const percentage = Math.max(0, Math.min(daysElapsed, 100)); // Assure que le pourcentage est entre 0% et 100%
 
-    // The loading bar should increase by 1% each day, starting from 0%
-    const percentage = Math.max(0, Math.min(daysElapsed, 100)); // Ensure the percentage is between 0% and 100%
-
-    // Update the width of the loading bar and display the percentage
     loadingBar.style.width = `${percentage}%`;
     percentageDisplay.textContent = `${percentage}%`;
 });
