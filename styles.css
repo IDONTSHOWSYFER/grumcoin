@@ -666,6 +666,14 @@ main {
     font-size: 11px;
 }
 
+.custom-link {
+    color: rgb(216, 19, 58);
+}
+
+.custom-link:hover {
+    color: rgb(255, 0, 51);
+}
+
 @keyframes flicker {
     0%, 19%, 23%, 25%, 50%, 55%, 100% {
         opacity: 1;
@@ -718,6 +726,14 @@ main {
 
     .tokenomics-table {
         max-width: 100%;
+    }
+
+    .custom-link {
+        color: rgb(216, 19, 58);
+    }
+
+    .custom-link:hover {
+        color: rgb(255, 0, 51);
     }
 }
 
