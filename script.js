@@ -130,8 +130,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Attacher la fonction scrollToNext au contexte global
+    // Attacher la fonction scrollToNext au contexte global (si vous souhaitez conserver les attributs onclick)
     window.scrollToNext = scrollToNext;
+
+    // --- Attacher les écouteurs aux boutons de navigation des blockquotes ---
+    const blockquoteButtons = document.querySelectorAll('.scroll-btn');
+    blockquoteButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Empêche le comportement par défaut du bouton
+            e.stopPropagation(); // Empêche le clic de se propager
+
+            const nextIndex = parseInt(button.getAttribute('data-next'));
+            if (!isNaN(nextIndex)) {
+                scrollToNext(nextIndex);
+            }
+        });
+    });
 
     // --- Fonctionnalité Barre de Progression Holo ---
     const loadingBar = document.getElementById('holo-loading-bar');
