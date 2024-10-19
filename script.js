@@ -94,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         slides.forEach(slide => {
             slide.style.transform = `translateX(${offset}%)`;
         });
+
+        console.log(`Slide affiché: ${currentIndex + 1}`);
     }
 
     leftArrow.addEventListener('click', (e) => {
@@ -114,7 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour passer au blockquote suivant par index
     function scrollToNext(nextIndex) {
+        console.log(`scrollToNext called with index: ${nextIndex}`);
         if (nextIndex < 1 || nextIndex > totalQuotes) {
+            console.warn(`Index ${nextIndex} est hors limites.`);
             return;
         }
 
@@ -127,11 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nextBlockquote) {
             nextBlockquote.classList.add('active');
             currentQuoteIndex = nextIndex;
+            console.log(`Activated blockquote avec id: quote${nextIndex}`);
+        } else {
+            console.error(`Aucun blockquote trouvé avec id: quote${nextIndex}`);
         }
     }
-
-    // Attacher la fonction scrollToNext au contexte global (si vous souhaitez conserver les attributs onclick)
-    window.scrollToNext = scrollToNext;
 
     // --- Attacher les écouteurs aux boutons de navigation des blockquotes ---
     const blockquoteButtons = document.querySelectorAll('.scroll-btn');
@@ -159,10 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return daysElapsed;
     }
 
-    const startDate = '2024-09-06'; // Date de début (peut être modifiée)
+    const startDate = '2024-09-06'; // Date de début (modifiable)
     const daysElapsed = getDaysElapsed(startDate);
-    const percentage = Math.max(0, Math.min(daysElapsed, 100)); // Assure que le pourcentage est entre 0% et 100%
+    const percentage = Math.max(0, Math.min(daysElapsed, 100)); // Limite entre 0% et 100%
 
     loadingBar.style.width = `${percentage}%`;
     percentageDisplay.textContent = `${percentage}%`;
+
+    console.log(`Barre de progression Holo: ${percentage}%`);
 });
