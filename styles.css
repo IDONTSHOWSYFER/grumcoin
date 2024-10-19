@@ -908,7 +908,7 @@ main {
     }
 
     .navbar-button {
-        display: none;
+        display: block;
     }
 
     .navbar-links .close-menu {
