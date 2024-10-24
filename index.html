@@ -9,7 +9,7 @@
     <meta name="author" content="𝕾𝖄𝕱𝕰𝕽">
     <title>Grum</title>
     <link rel="icon" href="/img/favicon-grum.png" type="image/x-icon" alt="Favicon Grum">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
@@ -25,8 +25,10 @@
                 <img src="img/logo.png" alt="GrumCoin Logo" class="logo">
                 <img src="img/title.png" alt="GrumCoin Title" class="title">
             </div>
-            <div class="burger">
-                <i class="fas fa-bars"></i>
+            <div class="burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
             <ul class="navbar-links">
                 <li><a href="index.html">HOME</a></li>
@@ -106,9 +108,9 @@
         </div>
     </section>
     <section id="tokenomics">
-        <div class="tokenomics-div">
-            <img src="img/tokenomics-title.png" class="tokenomics-title" alt="Tokenomics Title">
-            <img src="img/bubble-tokenomics.png" class="bubble-tokenomics" alt="Bubble Tokenomics">
+        <img src="/img/tokenomics-title.png" class="tokenomics-title" alt="Titre Tokenomics">
+        <div class="grux-wrap">
+        <img src="/img/grux.png" class="grux" alt="Grux Image">
         </div>
         <div class="tokenomics-table-container">
             <table class="tokenomics-table">
@@ -235,7 +237,7 @@
             </div>
         </div>
     </footer>
-    <script src="script.js" defer></script>
+    <script src="script.min.js" defer></script>
 </body>
 
 </html>
