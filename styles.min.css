@@ -410,16 +410,12 @@ main {
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
-.grux-wrap {
-    background-color: red;
-}
-
 .grux {
     width: auto; 
-    height: 200px;
+    height: 350px;
     position: absolute;
-    left: -130px;
-    transform: translate(50%, -50%) rotate(45deg);
+    left: -240px;
+    transform: translate(50%, -50%) rotate(55deg);
     z-index: 10;
     max-width: none;
 }
@@ -780,9 +776,9 @@ main {
     }
 
     .grux {
-        height: 150px;
-        margin-left: 30px;
-        margin-top: -60px;
+        height: 170px;
+        margin-left: 140px;
+        margin-top: -70px;
     }
 
 
@@ -885,7 +881,7 @@ main {
     }
 
     #roadmap .roadmap {
-        margin-top: -60px;
+        margin-top: -100px;
     }
 
     #carousel {
@@ -930,13 +926,13 @@ main {
 
     /* Ajuster la taille des liens de navigation pour les grands écrans */
     .navbar-links li a {
-        font-size: 20px; /* Augmenter la taille de la police */
+        font-size: 20px;
     }
 
     /* Assurer que les liens sont visibles et pas affectés par le toggle */
     .navbar-links li {
         opacity: 1;
-        transition: none; /* Désactiver les transitions sur les grands écrans */
+        transition: none;
     }
 
     /* Réinitialiser les animations des liens */
@@ -1040,12 +1036,13 @@ main {
     }
 
     .grux {
-        height: 90px;
-        left: -90px;
+        height: 100px;
+        left: -205px;
+        margin-top: -55px;
     }
 
     .blockquote-wrapper {
-        font-size: 17px;
+        font-size: 20px;
     }
 }
 
@@ -1086,23 +1083,26 @@ main {
     }
 
     .blockquote-wrapper {
-        font-size: 15px;
+        font-size: 13px;
     }
     .grux {
-        height: 50px;
-        left: -60px;
-        margin-top: -30px;
+        height: 70px;
+        left: -185px;
+        margin-top: -15px;
     }
 }
 
 /* Media Queries pour les écrans très petits (max-width: 320px) */
 @media (max-width: 320px) {
     .blockquote-wrapper {
-        font-size: 13px;
+        font-size: 11px;
     }
     .grux {
         height: 50px;
-        left: -60px;
-        margin-top: -15px;
+        left: -170px;
+        margin-top: -10px;
+    }
+    #l, #r {
+        margin-top: 10px;
     }
 }
