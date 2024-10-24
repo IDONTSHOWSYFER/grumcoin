@@ -129,13 +129,50 @@ header {
     box-shadow: 0 0 15px rgba(255, 0, 0, 1);
 }
 
+/* Nouveau Style du Burger Amélioré */
 .burger {
-    display: none;
+    display: none; /* Affiché uniquement sur les petits écrans via media queries */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 25px;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    font-size: 1.5em;
-    color: var(--color-text);
+    padding: 0;
+    z-index: 1001; /* S'assurer qu'il est au-dessus des autres éléments */
+    transition: transform var(--transition-speed) ease-in-out;
 }
 
+.burger:focus {
+    outline: none;
+}
+
+.burger .bar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-text);
+    border-radius: 2px;
+    transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+    position: relative;
+    transform-origin: 1px;
+}
+
+/* Animation lors du toggle */
+.burger.toggle .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.burger.toggle .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Close Menu */
 .navbar-links .close-menu {
     align-self: flex-end;
     padding: 10px 20px;
@@ -316,8 +353,7 @@ main {
 #roadmap .roadmap-title {
     max-width: 80%;
     height: auto;
-    margin: 40px auto 25px auto;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
@@ -369,14 +405,22 @@ main {
 #tokenomics .tokenomics-title {
     max-width: 90%;
     height: auto;
-    margin: 40px auto;
+    margin-bottom: -20px;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
-.bubble-tokenomics {
-    width: 90%;
-    height: auto;
-    margin-top: -40px;
+.grux-wrap {
+    background-color: red;
+}
+
+.grux {
+    width: auto; 
+    height: 200px;
+    position: absolute;
+    left: -130px;
+    transform: translate(50%, -50%) rotate(45deg);
+    z-index: 10;
+    max-width: none;
 }
 
 .tokenomics-table-container {
@@ -446,16 +490,18 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     border-radius: 25px;
-    margin: 50px auto;
     max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 #community .community-title img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 25px;
+    margin-top: -25px;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
@@ -732,6 +778,13 @@ main {
         width: 250px;
     }
 
+    .grux {
+        height: 150px;
+        margin-left: 30px;
+        margin-top: -60px;
+    }
+
+
     .tokenomics-table {
         max-width: 100%;
     }
@@ -743,6 +796,15 @@ main {
 
     .custom-link:hover {
         color: rgb(255, 0, 51);
+    }
+    #community {
+        margin: 25px;
+    }
+    .carousel_slide {
+        margin-top: -20px;
+    }
+    #l, #r {
+        margin-top: -25px;
     }
 }
 
@@ -840,10 +902,53 @@ main {
     }
 }
 
+/* Media Queries pour les grands écrans (min-width: 769px) */
+@media (min-width: 769px) {
+    /* Masquer le burger sur les grands écrans */
+    .burger {
+        display: none;
+    }
+
+    /* Afficher les liens de navigation en ligne */
+    .navbar-links {
+        display: flex !important;
+        position: static;
+        height: auto;
+        background-color: transparent;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    /* Masquer le menu de fermeture si présent */
+    .navbar-links .close-menu {
+        display: none;
+    }
+
+    /* Ajuster la taille des liens de navigation pour les grands écrans */
+    .navbar-links li a {
+        font-size: 20px; /* Augmenter la taille de la police */
+    }
+
+    /* Assurer que les liens sont visibles et pas affectés par le toggle */
+    .navbar-links li {
+        opacity: 1;
+        transition: none; /* Désactiver les transitions sur les grands écrans */
+    }
+
+    /* Réinitialiser les animations des liens */
+    .navbar-links.active li {
+        opacity: 1;
+        animation: none;
+    }
+}
+
 /* Media Queries pour les écrans petits (max-width: 768px) */
 @media (max-width: 768px) {
     .burger {
-        display: block;
+        display: flex;
         position: relative;
         top: 0;
         right: 0;
@@ -901,6 +1006,7 @@ main {
 
     .navbar-links.active li {
         opacity: 1;
+        animation: navLinkFade 0.5s ease forwards;
     }
 
     .scroll-btn {
@@ -932,38 +1038,9 @@ main {
         margin-top: -20px;
     }
 
-    .blockquote-wrapper {
-        font-size: 17px;
-    }
-}
-
-/* Media Queries spécifiques (min-width: 769px) */
-@media (min-width: 769px) {
-    .burger {
-        display: none;
-    }
-
-    .navbar-links {
-        position: static;
-        height: auto;
-        background-color: transparent;
-        flex-direction: row;
-        align-items: center;
-        width: auto;
-        transform: translateX(0);
-        z-index: 1;
-    }
-
-    .navbar-links::before {
-        content: none;
-    }
-
-    .navbar-button {
-        display: inline-block;
-    }
-
-    .navbar-links .close-menu {
-        display: none;
+    .grux {
+        height: 90px;
+        left: -90px;
     }
 
     .blockquote-wrapper {
@@ -1009,5 +1086,22 @@ main {
 
     .blockquote-wrapper {
         font-size: 15px;
+    }
+    .grux {
+        height: 60px;
+        left: -70px;
+        margin-top: -30px;
+    }
+}
+
+/* Media Queries pour les écrans très petits (max-width: 320px) */
+@media (max-width: 320px) {
+    .blockquote-wrapper {
+        font-size: 13px;
+    }
+    .grux {
+        height: 50px;
+        left: -60px;
+        margin-top: -15px;
     }
 }
