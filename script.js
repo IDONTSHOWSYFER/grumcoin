@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleMenu = (e) => {
         e.stopPropagation(); // Empêche le clic de se propager
         navLinks.classList.toggle('active');
+        burger.classList.toggle('toggle');
+
+        // Mettre à jour les attributs ARIA
+        const isActive = navLinks.classList.contains('active');
+        burger.setAttribute('aria-expanded', isActive);
 
         // Animer les liens de navigation
         navLinksLi.forEach((link, index) => {
@@ -20,9 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
             }
         });
-
-        // Animation de l'icône burger
-        burger.classList.toggle('toggle');
     };
 
     // Ouvrir/fermer le menu en cliquant sur le burger
@@ -32,28 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', (e) => {
         e.preventDefault(); // Empêche le comportement par défaut du lien
         navLinks.classList.remove('active');
+        burger.classList.remove('toggle');
+        burger.setAttribute('aria-expanded', false);
 
         // Réinitialiser les animations des liens
         navLinksLi.forEach((link) => {
             link.style.animation = '';
         });
-
-        // Réinitialiser l'animation du burger
-        burger.classList.remove('toggle');
     });
 
     // Fermer le menu en cliquant en dehors du menu burger
     document.addEventListener('click', (e) => {
         if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !burger.contains(e.target)) {
             navLinks.classList.remove('active');
+            burger.classList.remove('toggle');
+            burger.setAttribute('aria-expanded', false);
 
             // Réinitialiser les animations des liens
             navLinksLi.forEach((link) => {
                 link.style.animation = '';
             });
-
-            // Réinitialiser l'animation du burger
-            burger.classList.remove('toggle');
         }
     });
 
@@ -61,14 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
+            burger.classList.remove('toggle');
+            burger.setAttribute('aria-expanded', false);
 
             // Réinitialiser les animations des liens
             navLinksLi.forEach((link) => {
                 link.style.animation = '';
             });
-
-            // Réinitialiser l'animation du burger
-            burger.classList.remove('toggle');
         }
     });
 
@@ -114,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuoteIndex = 1;
     const totalQuotes = 5;
 
-    // Fonction pour passer au blockquote suivant par index
     function scrollToNext(nextIndex) {
         console.log(`scrollToNext called with index: ${nextIndex}`);
         if (nextIndex < 1 || nextIndex > totalQuotes) {
